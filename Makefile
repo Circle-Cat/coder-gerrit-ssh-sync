@@ -22,7 +22,7 @@ else
 endif
 
 # The binaries to build (just the basenames)
-BINS ?= myapp-1 myapp-2
+BINS ?= coder-gerrit-ssh-sync
 
 # The platforms we support.  In theory this can be used for Windows platforms,
 # too, but they require specific base images, which we do not have.
@@ -30,10 +30,10 @@ ALL_PLATFORMS ?= linux/amd64 linux/arm linux/arm64 linux/ppc64le linux/s390x
 
 # The "FROM" part of the Dockerfile.  This should be a manifest-list which
 # supports all of the platforms listed in ALL_PLATFORMS.
-BASE_IMAGE ?= gcr.io/distroless/static
+BASE_IMAGE ?= alpine:3.20
 
 # Where to push the docker images.
-REGISTRY ?= example.com
+REGISTRY ?= ghcr.io/jingyuanliang
 
 # Credentials to access the registry.
 REGISTRY_USERNAME ?= oauth2accesstoken
