@@ -146,7 +146,7 @@ func syncUser(ctx context.Context, user *coderUser) error {
 
 func main() {
 	ctx := context.Background()
-	log.Printf("version: %s\n", version.Version)
+	log.Printf("Version: %s\n", version.Version)
 
 	flag.Parse()
 	flag.CommandLine.VisitAll(func(f *flag.Flag) {
