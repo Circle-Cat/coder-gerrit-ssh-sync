@@ -45,7 +45,7 @@ var (
 )
 
 func coderGet(ctx context.Context, path string, target any) error {
-	req, err := http.NewRequestWithContext(ctx, "GET", *coderInstance+path, nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, *coderInstance+path, nil)
 	if err != nil {
 		return err
 	}
@@ -58,7 +58,7 @@ func coderGet(ctx context.Context, path string, target any) error {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != 200 {
+	if resp.StatusCode != http.StatusOK {
 		return fmt.Errorf("Coder HTTP status: %s", resp.Status)
 	}
 
@@ -100,7 +100,7 @@ func addSSHKey(ctx context.Context, account *gerrit.AccountInfo, key *coderUserG
 		return err
 	}
 
-	req.Method = "POST"
+	req.Method = http.MethodPost
 	req.Header.Set("Content-Type", "text/plain")
 
 	var resp gerrit.SSHKeyInfo
