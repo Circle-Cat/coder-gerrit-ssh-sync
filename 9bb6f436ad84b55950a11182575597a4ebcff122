@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f7a65e5_b8ae998d",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "If this is the only usage, you can put the whole struct definition here:\n\n```\n[]struct {\n  // ...\n} {\n  {\n    // ...\n  },\n  {\n    // ...\n  },\n}\n```",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 41
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68e016a9_e6e4c3b1",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "We usually don\u0027t write ALL_UPPER_CASE. https://google.github.io/styleguide/go/decisions#constant-names\n\nAnd for this specific usage (just for test cases of a single test), we often put it directly in the test function: https://github.com/kubernetes/kubernetes/blob/810e9e212ec5372d16b655f57b9231d8654a2179/pkg/kubelet/kubelet_test.go#L1198",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fadbe30d_cc71ef72",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "For this type of functions, we usually call it mustXxx(): https://google.github.io/styleguide/go/decisions#must-functions",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e557e9b_32d016b6",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "Tab",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 4
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27665764_10cfc240",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "Upper \"Failed\": https://google.github.io/styleguide/go/decisions#error-strings",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa39cff9_08cdf73a",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "We should really refactor the function to decouple it from global variables.",
+      "range": {
+        "startLine": 110,
+        "startChar": 1,
+        "endLine": 114,
+        "endChar": 4
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c51fa066_784a83a7",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-01T03:43:38Z",
+      "side": 1,
+      "message": "This function is simple. I think it\u0027s more clear to embed the httptest.NewServer call here?",
+      "range": {
+        "startLine": 116,
+        "startChar": 7,
+        "endLine": 116,
+        "endChar": 22
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
