@@ -72,6 +72,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c902761_f362371e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-02T03:41:52Z",
+      "side": 1,
+      "message": "Oh just realize this is an Errorf, not Fatalf, then it\u0027s fine.",
+      "parentUuid": "fadbe30d_cc71ef72",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e557e9b_32d016b6",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 2
