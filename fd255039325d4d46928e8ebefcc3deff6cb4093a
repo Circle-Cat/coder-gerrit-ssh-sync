@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f2c7aaa_60200180",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "so this refactored client should be actually used in main.go instead of just being tested here.",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9227632_1b7f58a7",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "Any reason this needs to be a `*string` instead of `string`?",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae95e542_46756b39",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "This naming is too generic, or move it to its own package.",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a3d7130_daff960f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "Need to be `any`. Not always `map[string]string`.",
+      "range": {
+        "startLine": 26,
+        "startChar": 67,
+        "endLine": 26,
+        "endChar": 85
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d93627a7_ba170351",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "Does this really work? (didn\u0027t try)",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 51
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4c509df_2883ca28",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "This whole is equivalent to `return json.NewDecoder(resp.Body).Decode(target)`.",
+      "range": {
+        "startLine": 43,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 11
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}

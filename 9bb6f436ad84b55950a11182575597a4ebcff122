@@ -262,6 +262,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d8df9ed6_9bd03b17",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-03T10:45:06Z",
+      "side": 1,
+      "message": "Not done - other instances exist.",
+      "parentUuid": "254d65d5_73913621",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa39cff9_08cdf73a",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 2
