@@ -47,6 +47,54 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "079c2d8f_d940d45e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68e016a9_e6e4c3b1",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f300da4_f145f12f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f7a65e5_b8ae998d",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 41
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fadbe30d_cc71ef72",
@@ -94,6 +142,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "891c3855_6c98b5d0",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c902761_f362371e",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e557e9b_32d016b6",
@@ -107,6 +179,30 @@
       "writtenOn": "2024-12-01T03:43:38Z",
       "side": 1,
       "message": "Tab",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 4
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c692b371_ec535fac",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e557e9b_32d016b6",
       "range": {
         "startLine": 51,
         "startChar": 0,
@@ -140,6 +236,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "254d65d5_73913621",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27665764_10cfc240",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa39cff9_08cdf73a",
@@ -163,6 +283,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b95a65ee_20a91a6d",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "aa39cff9_08cdf73a",
+      "range": {
+        "startLine": 110,
+        "startChar": 1,
+        "endLine": 114,
+        "endChar": 4
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c51fa066_784a83a7",
@@ -176,6 +320,30 @@
       "writtenOn": "2024-12-01T03:43:38Z",
       "side": 1,
       "message": "This function is simple. I think it\u0027s more clear to embed the httptest.NewServer call here?",
+      "range": {
+        "startLine": 116,
+        "startChar": 7,
+        "endLine": 116,
+        "endChar": 22
+      },
+      "revId": "9bb6f436ad84b55950a11182575597a4ebcff122",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "867468a6_9f4d74df",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-03T07:36:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c51fa066_784a83a7",
       "range": {
         "startLine": 116,
         "startChar": 7,
