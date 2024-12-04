@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38795f31_ee4fa263",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-04T10:39:42Z",
+      "side": 1,
+      "message": "Why not make it a receiver, so every `coderGet(..., config)` call becomes `config.coderGet()`?\n\nMaybe with a bit renaming, e.g. config -\u003e c, CoderClientConfig -\u003e CoderClient, coderGet -\u003e Get.",
+      "range": {
+        "startLine": 50,
+        "startChar": 60,
+        "endLine": 50,
+        "endChar": 66
+      },
+      "revId": "1ca6c273f3e0d01b4ca35350dc99fed3271a725b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2d5eb46_f1ba285c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-04T10:39:42Z",
+      "side": 1,
+      "message": "Consider:\n\n```\n\tinstance :\u003d flag.String(\"coder\", \"\", \"Base URL for Coder instance\")\n\tflag.Parse()\n\tcoderClientConfig :\u003d CoderClientConfig{\n\t\tInstance: *instance,\n\t\tToken: os.Getenv(\"CODER_SESSION_TOKEN\"),\n\t}\n```\n\nor\n\n\n```\n\tcoderClientConfig :\u003d CoderClientConfig{\n\t\tToken: os.Getenv(\"CODER_SESSION_TOKEN\"),\n\t}\n\tflag.StringVar(\u0026coderClientConfig.Instance, \"coder\", \"\", \"Base URL for Coder instance\"),\n\tflag.Parse()\n```\n\nso you don\u0027t need to carry a pointer inside the struct.\n\nThe second option is probably cleaner now (one less variable) but it won\u0027t fit if you want to refactor further to make the construction of CoderClientConfig opaque.",
+      "range": {
+        "startLine": 155,
+        "startChar": 8,
+        "endLine": 155,
+        "endChar": 74
+      },
+      "revId": "1ca6c273f3e0d01b4ca35350dc99fed3271a725b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fec5ef9e_fe01f56f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-04T10:39:42Z",
+      "side": 1,
+      "message": "Tab and trailing whitespace.",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 6
+      },
+      "revId": "1ca6c273f3e0d01b4ca35350dc99fed3271a725b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ac19df9_d5893994",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-04T10:39:42Z",
+      "side": 1,
+      "message": "Fix",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 199,
+        "endChar": 1
+      },
+      "revId": "1ca6c273f3e0d01b4ca35350dc99fed3271a725b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
