@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aafc67fa_d180f250",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-04T07:16:35Z",
+      "side": 1,
+      "message": "Changes made, please take another look.",
+      "parentUuid": "7f2c7aaa_60200180",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d9227632_1b7f58a7",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 3
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d458e9b4_6d114a8b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-04T07:16:35Z",
+      "side": 1,
+      "message": "Since coderInstance obtained with flag.String in main.go is of type *string, I\u0027m using *string here as well.",
+      "parentUuid": "d9227632_1b7f58a7",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae95e542_46756b39",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 3
@@ -60,6 +108,30 @@
       "writtenOn": "2024-12-03T10:45:06Z",
       "side": 1,
       "message": "This naming is too generic, or move it to its own package.",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ccf052d_785ac9ee",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-04T07:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae95e542_46756b39",
       "range": {
         "startLine": 19,
         "startChar": 5,
@@ -118,6 +190,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "15080ab5_2cc77b38",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-04T07:16:35Z",
+      "side": 1,
+      "message": "It passed the make test, but I haven\u0027t tested whether it can actually send GET request.",
+      "parentUuid": "d93627a7_ba170351",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 51
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f4c509df_2883ca28",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 3
@@ -129,6 +225,30 @@
       "writtenOn": "2024-12-03T10:45:06Z",
       "side": 1,
       "message": "This whole is equivalent to `return json.NewDecoder(resp.Body).Decode(target)`.",
+      "range": {
+        "startLine": 43,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 11
+      },
+      "revId": "fd255039325d4d46928e8ebefcc3deff6cb4093a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc3b5e96_960d8da2",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-04T07:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4c509df_2883ca28",
       "range": {
         "startLine": 43,
         "startChar": 1,
