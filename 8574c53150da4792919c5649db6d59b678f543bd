@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c06174ee_9185fbff",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-05T08:31:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this approach makes sense, and how to simulate passing the value of the \u0027coder\u0027 parameter as a command-line argument in the test method. I\u0027m still exploring.",
+      "revId": "8574c53150da4792919c5649db6d59b678f543bd",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
