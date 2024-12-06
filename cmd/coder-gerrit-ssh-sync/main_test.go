@@ -11,7 +11,9 @@ import (
 
 func TestNewCoderClient(t *testing.T) {
 	t.Run("Valid Client", func(t *testing.T) {
-		os.Setenv("CODER_SESSION_TOKEN", "valid_token")
+		os.Setenv("CODER_SESSION_TOKEN", "valid_token ")
+
+		t.Errorf("os.Args: %v", os.Args)
 
 		c, err := newCoderClient()
 
