@@ -1,4 +1,4 @@
-# Go app template build environment
+Go app template build environment
 
 This is a skeleton project for a Go application, which captures the best build
 techniques I have learned to date.  It uses a Makefile to drive the build (the
