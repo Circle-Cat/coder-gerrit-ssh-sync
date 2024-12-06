@@ -10,12 +10,11 @@ import (
 
 
 type TestCase struct {
-    name        string 
-    inputPath   string 
-    mockResponse func(w http.ResponseWriter, r *http.Request) 
-    expected    coderBuildInfoResponse 
+    name        string
+    inputPath   string
+    mockResponse func(w http.ResponseWriter, r *http.Request)
+    expected    coderBuildInfoResponse
     expectedErr string
-    //token string
 }
 
 type TestCasesNewRequestWithContext struct {
@@ -43,17 +42,17 @@ func (m *MockRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) 
     return m.RoundTripFunc(req)
 }
 
-// Test CoderGe. Split with TestCoderGetNewRequestWithContext cuz this will assumes valid coderInstance+path but server side/ Decode problem. 
+// Test CoderGe. Split with TestCoderGetNewRequestWithContext cuz this will assumes valid coderInstance+path but server side/ Decode problem.
 func TestCoderGet(t *testing.T) {
-    ctx := context.Background() 
+    ctx := context.Background()
 
     testCases := []TestCase{
-        {   
+        {
             // Scenario 1: if coderGet doesn't fail, verify return struct vs expected struct. NOT verify the inside data!
             name: "Successful response",
             mockResponse: func(w http.ResponseWriter, r *http.Request) {
-                w.WriteHeader(http.StatusOK) // set HTTP 200 means success. 
-                fmt.Fprintln(w, `{"Version": "1.0.0"}`) // mimic the actual return file from the server. 
+                w.WriteHeader(http.StatusOK) // set HTTP 200 means success.
+                fmt.Fprintln(w, `{"Version": "1.0.0"}`) // mimic the actual return file from the server.
             },
             expected: coderBuildInfoResponse{Version: "1.0.0"},
             expectedErr: "",
@@ -70,7 +69,7 @@ func TestCoderGet(t *testing.T) {
             expectedErr: "Coder HTTP status: 404 Not Found",
             inputPath: "/api/v2/buildinfo",
         },
-        
+
         {
             // Scenario 3: if server was reach and understood the request, but fail to return the Version.
             // Decode will return "invalid character '}' looking for beginning of value" automatically
@@ -91,20 +90,20 @@ func TestCoderGet(t *testing.T) {
         t.Run(tc.name, func(t *testing.T) {
 
             // Step 1: Create a mock HTTP server
-            // httptest.NewServer: set up HTTP serverfor testing specific. Runs locally doesn't need internet access. 
+            // httptest.NewServer: set up HTTP serverfor testing specific. Runs locally doesn't need internet access.
             mockServer := httptest.NewServer(http.HandlerFunc(tc.mockResponse))
             defer mockServer.Close() // cose the server after test is done. 
 
             // Step 2: Let coderInstance point to mock server
             *coderInstance = mockServer.URL
-           
+
             // Step 3: Prepare the target structure to decode the JSON response
             var target coderBuildInfoResponse
 
             // Step 4: Call the function under test
-            // coderGet: store decoded version info in target, and return nil if decode success or error if fail. 
+            // coderGet: store decoded version info in target, and return nil if decode success or error if fail.
             err := coderGet(ctx, tc.inputPath, &target)
-            
+
 
             // Step 5: Assert the result
             if tc.expectedErr != "" {
@@ -115,7 +114,7 @@ func TestCoderGet(t *testing.T) {
                 if err != nil {
                     t.Fatalf("For %s: unexpected error: %v", tc.name, err)
                 }
-                
+
                 if target != tc.expected {
                     t.Fatalf("For %s: expected: %+v, got: %+v", tc.name, tc.expected, target)
                 }
@@ -126,7 +125,7 @@ func TestCoderGet(t *testing.T) {
 
 }
 
-// Test NewRequestWithContext in CoderGet. Split with TestCoderGet cuz this will provide invalid coderInstance+path. 
+// Test NewRequestWithContext in CoderGet. Split with TestCoderGet cuz this will provide invalid coderInstance+path.
 func TestCoderGetNewRequestWithContext(t *testing.T){
 
     ctx := context.Background()
@@ -140,13 +139,12 @@ func TestCoderGetNewRequestWithContext(t *testing.T){
             coderInstance: "127.0.0.1:port", // Should be http://127.0.0.1:port
             expected: coderBuildInfoResponse{},
             expectedErr: "parse \"127.0.0.1:port/api/v2/buildinfo\": first path segment in URL cannot contain colon",
-            
         },
     }
 
     for _, tc := range testCasesNewRequestWithContext {
         t.Run(tc.name, func(t *testing.T){
-            
+
 
             originalCoderInstance := *coderInstance
             defer func() {
@@ -155,7 +153,7 @@ func TestCoderGetNewRequestWithContext(t *testing.T){
 
             // Assign invalid path to coderInstance
             *coderInstance = tc.coderInstance
-            
+
             var target coderBuildInfoResponse
 
             err := coderGet(ctx, tc.inputPath, &target)
@@ -217,7 +215,7 @@ func TestHttpClientError(t *testing.T) {
             t.Fatalf("expected error: %s, got: %v", tc.expectedErr, err)
         }
 
-        
+
     }
 
 
