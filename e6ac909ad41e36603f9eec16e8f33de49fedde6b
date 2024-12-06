@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78089128_aaccd634",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-06T09:12:34Z",
+      "side": 1,
+      "message": "Great job! Even more impressive considering it\u0027s your first time writing unit tests.",
+      "revId": "e6ac909ad41e36603f9eec16e8f33de49fedde6b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc2fd873_3a0827d5",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-06T09:12:34Z",
+      "side": 1,
+      "message": "This is the advice that Liang once gave me：\nfor this specific usage (just for test cases of a single test), we often put it directly in the test function: https://github.com/kubernetes/kubernetes/blob/810e9e212ec5372d16b655f57b9231d8654a2179/pkg/kubelet/kubelet_test.go#L1198",
+      "revId": "e6ac909ad41e36603f9eec16e8f33de49fedde6b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "382ddaab_14a0e0d1",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-06T09:12:34Z",
+      "side": 1,
+      "message": "Test CoderGe -\u003e Test CoderGet",
+      "revId": "e6ac909ad41e36603f9eec16e8f33de49fedde6b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2410c661_5deaf86a",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-06T09:12:34Z",
+      "side": 1,
+      "message": "Just asking, why use t.Logf and t.Fatalf here? I\u0027m not very familiar with Go either.\"",
+      "revId": "e6ac909ad41e36603f9eec16e8f33de49fedde6b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
