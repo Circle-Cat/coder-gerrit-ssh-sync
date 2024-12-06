@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "931fb70b_542990b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2024-12-06T09:03:54Z",
+      "side": 1,
+      "message": "Please add reasons in your CL description why we need this change.\n\nIn this case, it is:\n\nWe need the git review file to allow direct use of `git review` command without additional settings, and prevent default use of https when submitting code.",
+      "revId": "3a072d32b8a4c93bfd284aac2ddb29cb1c048ec4",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
