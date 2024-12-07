@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b58df1cc_36371f4a",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-07T07:07:30Z",
+      "side": 1,
+      "message": "Hmm maybe I should edit link config to catch this (unformatted code).",
+      "range": {
+        "startLine": 180,
+        "startChar": 1,
+        "endLine": 181,
+        "endChar": 14
+      },
+      "revId": "e9461d9fa21e3a60500c7813c32bfefe87fb3bff",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
