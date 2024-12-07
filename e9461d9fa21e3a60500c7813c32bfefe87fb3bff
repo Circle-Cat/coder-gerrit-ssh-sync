@@ -22,6 +22,30 @@
       },
       "revId": "e9461d9fa21e3a60500c7813c32bfefe87fb3bff",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb965a48_7a624cbd",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-07T13:29:02Z",
+      "side": 1,
+      "message": "Did I just perfectly trigger every unformatted style?",
+      "parentUuid": "b58df1cc_36371f4a",
+      "range": {
+        "startLine": 180,
+        "startChar": 1,
+        "endLine": 181,
+        "endChar": 14
+      },
+      "revId": "e9461d9fa21e3a60500c7813c32bfefe87fb3bff",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
