@@ -17,6 +17,7 @@ limitations under the License.
 // Package main is the entrypoint for coder-gerrit-ssh-sync.
 package main
 
+
 import (
 	"context"
 	"encoding/json"
@@ -33,26 +34,41 @@ import (
 )
 
 var (
-	coderInstance  = flag.String("coder", "", "Base URL for Coder instance")
 	gerritInstance = flag.String("gerrit", "", "Base URL for Gerrit instance")
 	filterOnly     = flag.String("only", "", "Work on this specific user only for testing")
 
-	coderToken     = os.Getenv("CODER_SESSION_TOKEN")
 	gerritUsername = os.Getenv("GERRIT_USERNAME")
 	gerritPassword = os.Getenv("GERRIT_PASSWORD")
 
 	gerritClient *gerrit.Client
 )
 
-func coderGet(ctx context.Context, path string, target any) error {
-	req, err := http.NewRequestWithContext(ctx, "GET", *coderInstance+path, nil)
+type coderClient struct{
+	url string
+	token string
+	client *http.Client
+}
+
+// Returns a pointer coderClient (reference)
+func newCoderClient(url string, token string) *coderClient {
+	return &coderClient {
+		url: url,
+		token: token,
+		client: http.DefaultClient, // Assign http global client reference to client
+	}
+}
+
+// Note: why not put pass coderClient as an input variable, instead build get as a method for coderClient
+// Encapsulation: If method operate entirely on that data then build as method.
+func (c *coderClient) get(ctx context.Context, path string, target any) error {
+	req, err := http.NewRequestWithContext(ctx, "GET", c.url + path, nil)
 	if err != nil {
 		return err
 	}
 
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("Coder-Session-Token", coderToken)
-	resp, err := http.DefaultClient.Do(req)
+	req.Header.Set("Coder-Session-Token", c.token)
+	resp, err := c.client.Do(req)
 	if err != nil {
 		return err
 	}
@@ -87,6 +103,7 @@ type coderUserGitSSHKeyResponse struct {
 	PublicKey string `json:"public_key"`
 }
 
+
 func addSSHKey(ctx context.Context, account *gerrit.AccountInfo, key *coderUserGitSSHKeyResponse) error {
 	pieces := strings.SplitN(strings.TrimSpace(key.PublicKey), " ", 3)
 	if len(pieces) == 2 {
@@ -112,7 +129,9 @@ func addSSHKey(ctx context.Context, account *gerrit.AccountInfo, key *coderUserG
 	return nil
 }
 
-func syncUser(ctx context.Context, user *coderUser) error {
+func syncUser(ctx context.Context, client *coderClient, user *coderUser) error {
+
+
 	log.Printf("Syncing user %q", user)
 	gus, _, err := gerritClient.Accounts.QueryAccounts(ctx, &gerrit.QueryAccountOptions{
 		QueryOptions: gerrit.QueryOptions{
@@ -130,8 +149,10 @@ func syncUser(ctx context.Context, user *coderUser) error {
 		return nil
 	}
 
+
+
 	var key coderUserGitSSHKeyResponse
-	if err := coderGet(ctx, fmt.Sprintf("/api/v2/users/%s/gitsshkey", user.ID), &key); err != nil {
+	if err := client.get(ctx, fmt.Sprintf("/api/v2/users/%s/gitsshkey", user.ID), &key); err != nil {
 		return fmt.Errorf("get Coder Git SSH key: %w", err)
 	}
 	log.Printf("Got Git SSH key for user %q: %s", user, key.PublicKey)
@@ -143,6 +164,8 @@ func syncUser(ctx context.Context, user *coderUser) error {
 	}
 	return errors.Join(errs...)
 }
+
+
 
 func main() {
 	ctx := context.Background()
@@ -168,22 +191,33 @@ func main() {
 	}
 	log.Printf("Gerrit version: %s", gv)
 
+
+	token := os.Getenv("CODER_SESSION_TOKEN")
+	if token == "" {
+		fmt.Println("Error: CODER_SESSION_TOKEN is not set")
+		return
+	}
+
+	client := newCoderClient("https://coder-siam.tailcce60.ts.net:7443", token)
+
+
 	var bi coderBuildInfoResponse
-	if err := coderGet(ctx, "/api/v2/buildinfo", &bi); err != nil {
+	if err := client.get(ctx, "/api/v2/buildinfo", &bi); err != nil {
 		log.Fatalf("Check Coder version: %v", err)
 	}
 	log.Printf("Coder version: %s", bi.Version)
 
 	var cus coderUsersResponse
-	if err := coderGet(ctx, "/api/v2/users", &cus); err != nil {
+	if err := client.get(ctx, "/api/v2/users", &cus); err != nil {
 		log.Fatalf("List Coder users: %v", err)
 	}
+	log.Printf("Coder version: %s", cus.Users)
 
 	for _, cu := range cus.Users {
 		if *filterOnly != "" && cu.Email != *filterOnly {
 			continue
 		}
-		if err := syncUser(ctx, &cu); err != nil {
+		if err := syncUser(ctx, client, &cu); err != nil {
 			log.Printf("Error syncing user %q: %v", cu, err)
 		}
 	}
