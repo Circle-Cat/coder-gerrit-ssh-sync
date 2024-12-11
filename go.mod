@@ -4,6 +4,7 @@ go 1.23
 
 require (
 	github.com/andygrunwald/go-gerrit v1.0.0
+	github.com/google/go-cmp v0.5.2
 	github.com/spf13/pflag v1.0.5
 )
 
