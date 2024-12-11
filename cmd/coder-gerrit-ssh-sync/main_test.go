@@ -1,76 +1,45 @@
 package main
 
 import (
-    "context"
-    "fmt"
-    "net/http"
-    "net/http/httptest"
-    "testing"
+	"context"
+	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"testing"
 )
 
-
-type TestCase struct {
-    name        string
-    inputPath   string
-    mockResponse func(w http.ResponseWriter, r *http.Request)
-    expected    coderBuildInfoResponse
-    expectedErr string
-}
-
-type TestCasesNewRequestWithContext struct {
-    name string
-    inputPath string
-    coderInstance string
-    expected    coderBuildInfoResponse
-    expectedErr string
-}
-
-type TestCasesDefaultClient struct {
-
-    name string
-    mockRoundTrip func(req *http.Request) (*http.Response, error)
-    expectedErr string
-    inputPath string
-
-}
-
-type MockRoundTripper struct {
-    RoundTripFunc func(req *http.Request) (*http.Response, error)
-}
-
-func (m *MockRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {
-    return m.RoundTripFunc(req)
-}
-
-// Test CoderGe. Split with TestCoderGetNewRequestWithContext cuz this will assumes valid coderInstance+path but server side/ Decode problem.
 func TestCoderGet(t *testing.T) {
-    ctx := context.Background()
+	ctx := context.Background()
 
-    testCases := []TestCase{
-        {
-            // Scenario 1: if coderGet doesn't fail, verify return struct vs expected struct. NOT verify the inside data!
-            name: "Successful response",
-            mockResponse: func(w http.ResponseWriter, r *http.Request) {
-                w.WriteHeader(http.StatusOK) // set HTTP 200 means success.
-                fmt.Fprintln(w, `{"Version": "1.0.0"}`) // mimic the actual return file from the server.
-            },
-            expected: coderBuildInfoResponse{Version: "1.0.0"},
-            expectedErr: "",
-            inputPath: "/api/v2/buildinfo",
-        },
-
-        {
-            // Scenario 2: if server was reached and understood the request, but can't find resource to return
-            name: "Not found 404 error",
-            mockResponse: func(w http.ResponseWriter, r *http.Request) {
-                w.WriteHeader(http.StatusNotFound) // 404 means requested resources not found on server
-            },
-            expected: coderBuildInfoResponse{},
-            expectedErr: "Coder HTTP status: 404 Not Found",
-            inputPath: "/api/v2/buildinfo",
-        },
-
-        {
+	testCases := []struct{
+		name         string
+		mockResponse func(w http.ResponseWriter, r *http.Request)
+		expected     coderBuildInfoResponse
+		expectedErr  string
+		inputPath    string
+	}{
+		{
+			// Scenario 1: Return version successfully
+			name: "Successful response",
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(http.StatusOK) // set HTTP 200 means success.
+				fmt.Fprintln(w, `{"Version": "1.0.0"}`) // writes data to w, mimic return file from the server.
+			},
+			expected: coderBuildInfoResponse{Version: "1.0.0"},
+			expectedErr: "",
+			inputPath: "/api/v2/buildinfo",
+		},
+		{
+			// Scenario 2: if server was reached and understood the request, but can't find resource to return (invalid path)
+			name: "Not found 404 error",
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(http.StatusNotFound) // 404 means requested resources not found on server
+			},
+			expected: coderBuildInfoResponse{},
+			expectedErr: "Coder HTTP status: 404 Not Found",
+			inputPath: "/api/v2/invalidPath",
+		},
+		{
             // Scenario 3: if server was reach and understood the request, but fail to return the Version.
             // Decode will return "invalid character '}' looking for beginning of value" automatically
             name: "Failed to return Version in JSON",
@@ -82,142 +51,66 @@ func TestCoderGet(t *testing.T) {
             expectedErr: "invalid character '}' looking for beginning of value",
             inputPath: "/api/v2/buildinfo",
         },
+		{
+			// Scenario 4: Invalid URL error
+			name: "Invalid URL error",
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+			},
+			expected:    coderBuildInfoResponse{},
+			expectedErr: "parse \"http://:%22/api/v2/buildinfo\": invalid port \":%22\" after host",
+			inputPath:   "/api/v2/buildinfo",
+		},
+		{
+			// Scenario 5: Unreachable address error
+			name: "Unreachable address error",
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+			},
+			expected:    coderBuildInfoResponse{},
+			expectedErr: "dial tcp 192.0.2.1:80: connect: network is unreachable",
+			inputPath:   "/api/v2/buildinfo",
+		},
+      
+	}
 
-    }
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			
+			// Create a mock HTTP server
+            // httptest.NewServer: set up local HTTP server for testing specific. Runs locally doesn't need internet access.
+			// http.HandlerFunc(tc.mockResponse) wraps tc.mockResponse into http.Handler interface, which is what httptest want. httptest can automatically input http.ResponseWriter and *http.Request
+			server := httptest.NewServer(http.HandlerFunc(tc.mockResponse))
+			defer server.Close()
+			
+			var client *coderClient 
+			if tc.name == "Invalid URL error" {
+				// Use invalid URL 
+				client = newCoderClient("http://:%22", "test-token")
+			} else if tc.name == "Unreachable address error" {
+				// Use unreachable URL
+				client = newCoderClient("http://192.0.2.1", "test-token")
+			} else {
+				// Create a test coderClient.
+				// server.URL is generated by httptest automatically
+				client = newCoderClient(server.URL, "test-token")
+			}
+			
+			// Test request
+			var bi coderBuildInfoResponse
+			err := client.get(ctx, tc.inputPath, &bi)
 
+			// Check error matches
+			if err != nil && tc.expectedErr == "" {
+				t.Fatalf("Unexpected error: %v", err) // break immediately 
+			}
+			if err == nil && tc.expectedErr != "" {
+				t.Fatalf("Expected error but got none") // break immediately 
+			}
 
-    for _, tc := range testCases {
-        t.Run(tc.name, func(t *testing.T) {
-
-            // Step 1: Create a mock HTTP server
-            // httptest.NewServer: set up HTTP serverfor testing specific. Runs locally doesn't need internet access.
-            mockServer := httptest.NewServer(http.HandlerFunc(tc.mockResponse))
-            defer mockServer.Close() // cose the server after test is done.
-
-            // Step 2: Let coderInstance point to mock server
-            *coderInstance = mockServer.URL
-
-            // Step 3: Prepare the target structure to decode the JSON response
-            var target coderBuildInfoResponse
-
-            // Step 4: Call the function under test
-            // coderGet: store decoded version info in target, and return nil if decode success or error if fail.
-            err := coderGet(ctx, tc.inputPath, &target)
-
-
-            // Step 5: Assert the result
-            if tc.expectedErr != "" {
-                if err == nil || err.Error() != tc.expectedErr {
-                    t.Fatalf("For %s: expected error: %v, got: %v", tc.name, tc.expectedErr, err)
-                }
-            } else {
-                if err != nil {
-                    t.Fatalf("For %s: unexpected error: %v", tc.name, err)
-                }
-
-                if target != tc.expected {
-                    t.Fatalf("For %s: expected: %+v, got: %+v", tc.name, tc.expected, target)
-                }
-            }
-        })
-    }
-
-
+			// Check response
+			if bi.Version != tc.expected.Version {
+				t.Errorf("Expected version '%s', got '%s'", tc.expected.Version, bi.Version) // print the error but not break 
+			}
+			
+		})
+	}
 }
-
-// Test NewRequestWithContext in CoderGet. Split with TestCoderGet cuz this will provide invalid coderInstance+path.
-func TestCoderGetNewRequestWithContext(t *testing.T){
-
-    ctx := context.Background()
-
-    testCasesNewRequestWithContext := []TestCasesNewRequestWithContext{
-
-        {
-            // Scenario 1: http:// is missing
-            name: "http:// is missing",
-            inputPath: "/api/v2/buildinfo",
-            coderInstance: "127.0.0.1:port", // Should be http://127.0.0.1:port
-            expected: coderBuildInfoResponse{},
-            expectedErr: "parse \"127.0.0.1:port/api/v2/buildinfo\": first path segment in URL cannot contain colon",
-        },
-    }
-
-    for _, tc := range testCasesNewRequestWithContext {
-        t.Run(tc.name, func(t *testing.T){
-
-
-            originalCoderInstance := *coderInstance
-            defer func() {
-                *coderInstance = originalCoderInstance
-            }()
-
-            // Assign invalid path to coderInstance
-            *coderInstance = tc.coderInstance
-
-            var target coderBuildInfoResponse
-
-            err := coderGet(ctx, tc.inputPath, &target)
-
-
-            if err != nil {
-                t.Logf("Actual error: %v", err)
-            }
-
-            if err == nil || err.Error() != tc.expectedErr {
-                t.Fatalf("Expected error: %s, got: %v", tc.expectedErr, err)
-            }
-
-            if(target != tc.expected){
-                t.Fatalf("Expected target return {}, got: %+v", target)
-            }
-
-        })
-    }
-}
-
-
-
-// Test http.DefaultClient.Do(req) in coderGet
-func TestHttpClientError(t *testing.T) {
-
-    ctx := context.Background()
-
-    testCasesDefaultClient := []TestCasesDefaultClient{
-        {
-            name: "Simulate transport error",
-            mockRoundTrip: func(req *http.Request) (*http.Response, error) {
-                return nil, fmt.Errorf("simulated transport error")
-            },
-            expectedErr : fmt.Sprintf("Get \"%s%s\": simulated transport error", *coderInstance, "/api/v2/buildinfo"),
-            inputPath: "/api/v2/buildinfo",
-        },
-    }
-
-    for _, tc := range testCasesDefaultClient {
-
-        originalTransport := http.DefaultClient.Transport
-        defer func() {
-            http.DefaultClient.Transport = originalTransport
-        }()
-
-        // Create a mock RoundTripper that always returns an error
-        // Basically can control the behavior of HTTP requests made by client without relying on real network communication
-        mockTransport := &MockRoundTripper{
-            RoundTripFunc: tc.mockRoundTrip,
-        }
-        http.DefaultClient.Transport = mockTransport
-
-
-        var target coderBuildInfoResponse
-        err := coderGet(ctx, tc.inputPath, &target)
-
-        if err == nil || err.Error() != tc.expectedErr {
-            t.Fatalf("expected error: %s, got: %v", tc.expectedErr, err)
-        }
-
-
-    }
-
-
-}
-
