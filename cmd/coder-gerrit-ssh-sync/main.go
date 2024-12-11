@@ -19,54 +19,31 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"errors"
 	"fmt"
 	"log"
-	"net/http"
 	"os"
 	"strings"
 
 	"github.com/andygrunwald/go-gerrit"
+	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/coderclient"
 	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/version"
 	flag "github.com/spf13/pflag"
 )
 
 var (
-	coderInstance  = flag.String("coder", "", "Base URL for Coder instance")
 	gerritInstance = flag.String("gerrit", "", "Base URL for Gerrit instance")
 	filterOnly     = flag.String("only", "", "Work on this specific user only for testing")
 
-	coderToken     = os.Getenv("CODER_SESSION_TOKEN")
 	gerritUsername = os.Getenv("GERRIT_USERNAME")
 	gerritPassword = os.Getenv("GERRIT_PASSWORD")
 
 	gerritClient *gerrit.Client
 )
 
-func coderGet(ctx context.Context, path string, target any) error {
-	req, err := http.NewRequestWithContext(ctx, "GET", *coderInstance+path, nil)
-	if err != nil {
-		return err
-	}
-
-	req.Header.Set("Accept", "application/json")
-	req.Header.Set("Coder-Session-Token", coderToken)
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != 200 {
-		return fmt.Errorf("Coder HTTP status: %s", resp.Status)
-	}
-
-	return json.NewDecoder(resp.Body).Decode(target)
-}
-
-type coderBuildInfoResponse struct {
-	Version string `json:"version"`
+type config struct {
+	coderURL string
+	token    string
 }
 
 type coderUsersResponse struct {
@@ -87,6 +64,30 @@ type coderUserGitSSHKeyResponse struct {
 	PublicKey string `json:"public_key"`
 }
 
+func parseFlags() *config {
+	coderURL := flag.String("coder", "", "Base URL for Coder instance")
+	token := os.Getenv("CODER_SESSION_TOKEN")
+
+	flag.Parse()
+
+	if token == "" {
+		log.Fatal("Error: CODER_SESSION_TOKEN is not set")
+	}
+
+	flag.CommandLine.VisitAll(func(f *flag.Flag) {
+		log.Printf("FLAG: --%s=%q", f.Name, f.Value)
+	})
+
+	return &config{
+		coderURL: *coderURL,
+		token:    token,
+	}
+}
+
+// addSSHKey add a Coder user's SSH key to the Gerrit account specified by account.
+// The key parameter contains the SSH key details.
+//
+// It return an error if the request fails.
 func addSSHKey(ctx context.Context, account *gerrit.AccountInfo, key *coderUserGitSSHKeyResponse) error {
 	pieces := strings.SplitN(strings.TrimSpace(key.PublicKey), " ", 3)
 	if len(pieces) == 2 {
@@ -112,7 +113,12 @@ func addSSHKey(ctx context.Context, account *gerrit.AccountInfo, key *coderUserG
 	return nil
 }
 
-func syncUser(ctx context.Context, user *coderUser) error {
+// syncUser synchronizes Coder user's SSH key with corresponding Gerrit accounts
+// using client.
+//
+// If any step fails, it returns immediate errors or an aggregated error that
+// combines all errors when adding SSH key to Gerrit accounts.
+func syncUser(ctx context.Context, client *coderclient.CoderClient, user *coderUser) error {
 	log.Printf("Syncing user %q", user)
 	gus, _, err := gerritClient.Accounts.QueryAccounts(ctx, &gerrit.QueryAccountOptions{
 		QueryOptions: gerrit.QueryOptions{
@@ -131,7 +137,7 @@ func syncUser(ctx context.Context, user *coderUser) error {
 	}
 
 	var key coderUserGitSSHKeyResponse
-	if err := coderGet(ctx, fmt.Sprintf("/api/v2/users/%s/gitsshkey", user.ID), &key); err != nil {
+	if err := client.Get(ctx, fmt.Sprintf("/api/v2/users/%s/gitsshkey", user.ID), &key); err != nil {
 		return fmt.Errorf("get Coder Git SSH key: %w", err)
 	}
 	log.Printf("Got Git SSH key for user %q: %s", user, key.PublicKey)
@@ -148,10 +154,7 @@ func main() {
 	ctx := context.Background()
 	log.Printf("version: %s\n", version.Version)
 
-	flag.Parse()
-	flag.CommandLine.VisitAll(func(f *flag.Flag) {
-		log.Printf("FLAG: --%s=%q", f.Name, f.Value)
-	})
+	config := parseFlags()
 
 	var err error
 	gerritClient, err = gerrit.NewClient(ctx, *gerritInstance, nil)
@@ -168,14 +171,16 @@ func main() {
 	}
 	log.Printf("Gerrit version: %s", gv)
 
-	var bi coderBuildInfoResponse
-	if err := coderGet(ctx, "/api/v2/buildinfo", &bi); err != nil {
+	client := coderclient.NewCoderClient(config.coderURL, config.token)
+
+	var bi coderclient.CoderBuildInfoResponse
+	if err := client.Get(ctx, "/api/v2/buildinfo", &bi); err != nil {
 		log.Fatalf("Check Coder version: %v", err)
 	}
 	log.Printf("Coder version: %s", bi.Version)
 
 	var cus coderUsersResponse
-	if err := coderGet(ctx, "/api/v2/users", &cus); err != nil {
+	if err := client.Get(ctx, "/api/v2/users", &cus); err != nil {
 		log.Fatalf("List Coder users: %v", err)
 	}
 
@@ -183,7 +188,7 @@ func main() {
 		if *filterOnly != "" && cu.Email != *filterOnly {
 			continue
 		}
-		if err := syncUser(ctx, &cu); err != nil {
+		if err := syncUser(ctx, client, &cu); err != nil {
 			log.Printf("Error syncing user %q: %v", cu, err)
 		}
 	}
