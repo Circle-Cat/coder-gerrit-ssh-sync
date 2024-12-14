@@ -19,15 +19,4 @@ package main
 
 import (
 	"context"
-	"encoding/json"
-	"errors"
-	"fmt"
-	"log"
-	"net/http"
-	"os"
-	"strings"
-
-	"github.com/andygrunwald/go-gerrit"
-	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/version"
-	flag "github.com/spf13/pflag"
 )
