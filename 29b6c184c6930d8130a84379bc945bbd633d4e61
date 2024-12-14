@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68064549_53631c5c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-14T06:46:48Z",
+      "side": 1,
+      "message": "To make sure I see the CL, you need to select my name in the \"Reviewers\" section at the top left, then click \"Add to attention set\". This way, I’ll know that this commit is meant for my review",
+      "revId": "29b6c184c6930d8130a84379bc945bbd633d4e61",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "905afec7_e7b4641d",
@@ -14,6 +31,24 @@
       "writtenOn": "2024-12-12T02:53:17Z",
       "side": 1,
       "message": "blank line",
+      "revId": "29b6c184c6930d8130a84379bc945bbd633d4e61",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83102bf2_2e465c51",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-14T06:46:48Z",
+      "side": 1,
+      "message": "The suggestions I left in the previous comments have been addressed, such as removing the extra blank lines in this case. So, you should click \"DONE\" on the corresponding comment to mark it as resolved.",
+      "parentUuid": "905afec7_e7b4641d",
       "revId": "29b6c184c6930d8130a84379bc945bbd633d4e61",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
