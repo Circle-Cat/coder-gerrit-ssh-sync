@@ -18,7 +18,6 @@ limitations under the License.
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -27,7 +26,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/andygrunwald/go-gerrit"
+	
 	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/version"
 	flag "github.com/spf13/pflag"
 )
