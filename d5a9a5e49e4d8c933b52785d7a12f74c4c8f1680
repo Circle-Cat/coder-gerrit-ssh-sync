@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47ce4d90_f10a86ec",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-17T07:03:15Z",
+      "side": 1,
+      "message": "MASTERPIECE!",
+      "revId": "d5a9a5e49e4d8c933b52785d7a12f74c4c8f1680",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a30536e_1ce3e329",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2024-12-17T07:03:15Z",
+      "side": 1,
+      "message": "Remove all extra spaces (highlighted in pink)",
+      "revId": "d5a9a5e49e4d8c933b52785d7a12f74c4c8f1680",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
