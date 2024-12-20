@@ -72,6 +72,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ca443a4_c76b7efd",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2024-12-20T01:59:02Z",
+      "side": 1,
+      "message": "Hmm actually this template doesn\u0027t require Go to build because everything runs in containers. It only needs Go to extract OS/ARCH and I think there\u0027s some fallback? Do me a favor and try it on a system without Go (but with Docker) and check if it works?",
+      "parentUuid": "98b9c3ea_0d93a2e1",
+      "range": {
+        "startLine": 42,
+        "startChar": 10,
+        "endLine": 42,
+        "endChar": 15
+      },
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "179ff80b_1410112c",
         "filename": "README.md",
         "patchSetId": 2
