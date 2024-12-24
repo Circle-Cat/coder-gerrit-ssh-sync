@@ -24,6 +24,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19fd34a7_4ff5a2d4",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-12-24T00:27:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56260bfe_252a350a",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 30
+      },
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67eff4f0_6a26b654",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-20T01:56:48Z",
       "side": 1,
       "message": "same.",
+      "range": {
+        "startLine": 6,
+        "startChar": 36,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bf8ddd0_5659334c",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-12-24T00:27:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67eff4f0_6a26b654",
       "range": {
         "startLine": 6,
         "startChar": 36,
@@ -96,6 +144,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b98cb79_6d5906f6",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-12-24T00:27:46Z",
+      "side": 1,
+      "message": "I tried running the make build command using Docker only, but it resulted in the following error:\n\nmake build\n/bin/sh: go: command not found\n/bin/sh: go: command not found\n# building for /\nOS must be set\nmake: *** [go-build] Error 1\n\nIt seems the build process still relies on Go, at least for determining OS/ARCH configurations. Let me know if there’s anything else I should try to get this working without Go installed!",
+      "parentUuid": "5ca443a4_c76b7efd",
+      "range": {
+        "startLine": 42,
+        "startChar": 10,
+        "endLine": 42,
+        "endChar": 15
+      },
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "179ff80b_1410112c",
         "filename": "README.md",
         "patchSetId": 2
@@ -107,6 +179,24 @@
       "writtenOn": "2024-12-20T01:56:48Z",
       "side": 1,
       "message": "https://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline",
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8eaddc8_ebe18196",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-12-24T00:27:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "179ff80b_1410112c",
       "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
