@@ -1,0 +1,59 @@
+{
+  "comments": [],
+  "submitRequirementResults": [
+    {
+      "submitRequirement": {
+        "name": "No-Unresolved-Comments",
+        "description": {
+          "value": "All comments should be resolved"
+        },
+        "applicabilityExpression": {},
+        "submittabilityExpression": {
+          "expressionString": "-has:unresolved AND label:Zero\u003dMIN"
+        },
+        "overrideExpression": {},
+        "allowOverrideInChildProjects": false
+      },
+      "applicabilityExpressionResult": {},
+      "submittabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"-has:unresolved AND label:Zero=MIN"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":["has:unresolved","label:Zero=MIN"],"failingAtoms":[]}
+      },
+      "overrideExpressionResult": {},
+      "patchSetCommitId": "c4557f8d332c7ec0a7d4b83596d54f4f98d9e0a3",
+      "legacy": {
+        "value": false
+      },
+      "forced": {},
+      "hidden": {}
+    },
+    {
+      "submitRequirement": {
+        "name": "Verified",
+        "description": {},
+        "applicabilityExpression": {
+          "value": {
+            "expressionString": "-branch:refs/meta/config"
+          }
+        },
+        "submittabilityExpression": {
+          "expressionString": "label:Verified\u003dMAX AND -label:Verified\u003dMIN"
+        },
+        "overrideExpression": {},
+        "allowOverrideInChildProjects": false
+      },
+      "applicabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"-branch:refs/meta/config"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/meta/config"]}
+      },
+      "submittabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"label:Verified=MAX AND -label:Verified=MIN"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Verified=MAX"],"failingAtoms":["label:Verified=MIN"]}
+      },
+      "overrideExpressionResult": {},
+      "patchSetCommitId": "c4557f8d332c7ec0a7d4b83596d54f4f98d9e0a3",
+      "legacy": {
+        "value": false
+      },
+      "forced": {},
+      "hidden": {}
+    }
+  ]
+}
