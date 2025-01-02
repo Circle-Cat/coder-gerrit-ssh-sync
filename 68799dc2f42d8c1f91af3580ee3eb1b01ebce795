@@ -16,6 +16,24 @@
       "message": "I see that you made quite a few changes here, but no tests were submitted. Please follow the principle of minimal commits by submitting only one method refactoring and its corresponding test at a time. For example, you can start by submitting the refactoring and test for the coderGet method. You can now submit the refactored method and its test under the task oss-15.\nhttps://con.circlecat.org/pages/viewpage.action?pageId\u003d13173114",
       "revId": "68799dc2f42d8c1f91af3580ee3eb1b01ebce795",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bd5c0a0_f8a31c21",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-02T02:12:16Z",
+      "side": 1,
+      "message": "Break down in the last code version. Only kept coderGet update and coderGet unit test. Other functions will be sent out in other CLs.",
+      "parentUuid": "fba66a92_5e0d6052",
+      "revId": "68799dc2f42d8c1f91af3580ee3eb1b01ebce795",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
