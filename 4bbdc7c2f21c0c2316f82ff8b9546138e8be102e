@@ -35,6 +35,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d45676f2_ea359b68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-04T08:08:35Z",
+      "side": 1,
+      "message": "I modified CL title. Please take a look.",
+      "parentUuid": "7b6e0123_507fa98d",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56bc25ae_71de5155",
@@ -48,6 +66,24 @@
       "writtenOn": "2025-01-04T01:35:48Z",
       "side": 1,
       "message": "Add [godoc](https://go.dev/doc/comment) for this type",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20d6bb11_5e67967c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-04T08:08:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56bc25ae_71de5155",
       "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
@@ -86,6 +122,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52bc40db_991a7616",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-04T08:08:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e327a5cd_b3153c69",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "43cf6054_5c035a0f",
@@ -99,6 +153,24 @@
       "writtenOn": "2025-01-04T01:35:48Z",
       "side": 1,
       "message": "Put error messages in a static file.",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "907f6a0e_71cfd0a1",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-04T08:08:35Z",
+      "side": 1,
+      "message": "Done. Created a file called error_messages.go to store static errors",
+      "parentUuid": "43cf6054_5c035a0f",
       "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
