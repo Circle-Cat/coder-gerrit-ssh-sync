@@ -16,6 +16,108 @@
       "message": "Good job!!!",
       "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b6e0123_507fa98d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "Good job overall but needs some polishing.\n\nYour CL title should describe what this CL does. `Modify xxx based on feedback` -\u003e What feedback? How? Reviewers won\u0027t know if you don\u0027t specify.\n\n`upload get unit test` -\u003e what does this mean? Unit tests is usually basic and does not need to go into CL title unless the whole CL is for this purpose.\n\nApart from CL title, you should add a paragraph specifying `why` we need these changes, so reviewers have background of this CL.",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56bc25ae_71de5155",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "Add [godoc](https://go.dev/doc/comment) for this type",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fc08d47_8f5a7492",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "@jingyuanliang@circlecat.org Are we trying to move away from global variables?",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e327a5cd_b3153c69",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "Add [godoc](https://go.dev/doc/comment) for this function.",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43cf6054_5c035a0f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "Put error messages in a static file.",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c58c1653_2d793d9c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 20
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2025-01-04T01:35:48Z",
+      "side": 1,
+      "message": "@jingyuanliang@u.circlecat.org can you review this test, I am not familiar with norms in Golang",
+      "revId": "4bbdc7c2f21c0c2316f82ff8b9546138e8be102e",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
