@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d15d4676_ff8b983b",
+        "filename": "cmd/coder-gerrit-ssh-sync/error_messages.go",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-05T07:28:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "357a8a04_dd03a565",
+      "revId": "88c2954a97bc207addd712bfa696e40abeb568f4",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62caef9f_9524ef40",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-01-04T18:18:33Z",
       "side": 1,
       "message": "Please review https://go.dev/doc/comment#func for how to write godoc for functions. There is no need to describe every action performed by this function since it is in the code.",
+      "revId": "88c2954a97bc207addd712bfa696e40abeb568f4",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9acab03d_8fc656b9",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 24
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-05T07:28:29Z",
+      "side": 1,
+      "message": "Removed the unnecessary part. Please take a look.",
+      "parentUuid": "62caef9f_9524ef40",
       "revId": "88c2954a97bc207addd712bfa696e40abeb568f4",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
