@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84d15204_b343297a",
+        "filename": "cmd/coder-gerrit-ssh-sync/error_messages.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "I feel it\u0027s verbose to define constants just for these?",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7a96e71_de161ed4",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Maybe extract this into a separate package.",
+      "range": {
+        "startLine": 46,
+        "startChar": 5,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f08dddf_f2cc6e47",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "url.JoinPath()",
+      "range": {
+        "startLine": 69,
+        "startChar": 58,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a315987_62f03a3a",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "I feel this is against the common pattern to have it directly in main(), but let\u0027s do the moving out of coderClient first and see how we can fit it there.",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 179,
+        "endChar": 9
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e490881_fa331fde",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Maybe check these conditions earlier before any network actions.",
+      "range": {
+        "startLine": 203,
+        "startChar": 4,
+        "endLine": 203,
+        "endChar": 9
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e785678_ecbffca9",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Print to stderr (or just use log package).",
+      "range": {
+        "startLine": 204,
+        "startChar": 6,
+        "endLine": 204,
+        "endChar": 13
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4d46cc1_f8314039",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "This might be a huge output if there are many users.",
+      "range": {
+        "startLine": 220,
+        "startChar": 30,
+        "endLine": 220,
+        "endChar": 39
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15eaf82d_636f3906",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Avoid testing error messages: https://google.github.io/styleguide/go/decisions#test-error-semantics (but I see you didn\u0027t test error messages anyway?)",
+      "range": {
+        "startLine": 18,
+        "startChar": 15,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "693caac1_cd24891d",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Consider more concise names: https://google.github.io/styleguide/go/decisions#subtest-names",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 16
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3633e88_eedced71",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Tabs.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 12
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "450cc389_24fddbe1",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-07T13:54:47Z",
+      "side": 1,
+      "message": "Don\u0027t branch on test case name, but include what it matters (\"http://:%22\") in the test case.",
+      "range": {
+        "startLine": 90,
+        "startChar": 6,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
