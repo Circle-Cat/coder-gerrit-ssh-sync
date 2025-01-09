@@ -24,6 +24,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75431bb5_3a003c3c",
+        "filename": "cmd/coder-gerrit-ssh-sync/error_messages.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "The name \u0027CODER_SESSION_TOKEN_MISSING_ERROR\u0027 was suggested by Bo in a previous comment https://review.circlecat.org/c/coder-gerrit-ssh-sync/+/5997/comment/357a8a04_dd03a565/. I modified to \"ErrSessionTokenMissing\"",
+      "parentUuid": "84d15204_b343297a",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7a96e71_de161ed4",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-07T13:54:47Z",
       "side": 1,
       "message": "Maybe extract this into a separate package.",
+      "range": {
+        "startLine": 46,
+        "startChar": 5,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2760e49d_f639e8fc",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "moved coderClient related code to coderClient.go. Please take a look.",
+      "parentUuid": "c7a96e71_de161ed4",
       "range": {
         "startLine": 46,
         "startChar": 5,
@@ -93,6 +141,54 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1183799_20196e0b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c908e568_e9de17aa",
+      "range": {
+        "startLine": 69,
+        "startChar": 45,
+        "endLine": 69,
+        "endChar": 50
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25a54f85_8e715ac5",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f08dddf_f2cc6e47",
+      "range": {
+        "startLine": 69,
+        "startChar": 58,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a315987_62f03a3a",
@@ -106,6 +202,30 @@
       "writtenOn": "2025-01-07T13:54:47Z",
       "side": 1,
       "message": "I feel this is against the common pattern to have it directly in main(), but let\u0027s do the moving out of coderClient first and see how we can fit it there.",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 179,
+        "endChar": 9
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc74cf83_c69b2de8",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Created parseFlags() to parse all the configuration variables. Please take a look.",
+      "parentUuid": "7a315987_62f03a3a",
       "range": {
         "startLine": 179,
         "startChar": 1,
@@ -139,6 +259,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a565f9a0_80d7407c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9e490881_fa331fde",
+      "range": {
+        "startLine": 203,
+        "startChar": 4,
+        "endLine": 203,
+        "endChar": 9
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e785678_ecbffca9",
@@ -152,6 +296,30 @@
       "writtenOn": "2025-01-07T13:54:47Z",
       "side": 1,
       "message": "Print to stderr (or just use log package).",
+      "range": {
+        "startLine": 204,
+        "startChar": 6,
+        "endLine": 204,
+        "endChar": 13
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2295788c_d08a91ee",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "changed to log.Fatal as token are important to connect Coder api.",
+      "parentUuid": "8e785678_ecbffca9",
       "range": {
         "startLine": 204,
         "startChar": 6,
@@ -185,6 +353,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47bfa578_1a6a38e9",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Deleted.",
+      "parentUuid": "c4d46cc1_f8314039",
+      "range": {
+        "startLine": 220,
+        "startChar": 30,
+        "endLine": 220,
+        "endChar": 39
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15eaf82d_636f3906",
@@ -198,6 +390,30 @@
       "writtenOn": "2025-01-07T13:54:47Z",
       "side": 1,
       "message": "Avoid testing error messages: https://google.github.io/styleguide/go/decisions#test-error-semantics (but I see you didn\u0027t test error messages anyway?)",
+      "range": {
+        "startLine": 18,
+        "startChar": 15,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05f11e7e_13f10d28",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Changed to boolean based on styleguide \"only care whether an error occurred or not\". I searched online some suggests to include error types in unit test (which needs to be done as well as mentioned in the jira ticket https://jira.circlecat.org/browse/OSS-15). I plan to modify error types after finishing the refactor and corresponding unit test.",
+      "parentUuid": "15eaf82d_636f3906",
       "range": {
         "startLine": 18,
         "startChar": 15,
@@ -231,6 +447,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69724bdc_b85be5f9",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "693caac1_cd24891d",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 16
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3633e88_eedced71",
@@ -254,6 +494,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5f9746_e5982c15",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3633e88_eedced71",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 12
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "450cc389_24fddbe1",
@@ -267,6 +531,30 @@
       "writtenOn": "2025-01-07T13:54:47Z",
       "side": 1,
       "message": "Don\u0027t branch on test case name, but include what it matters (\"http://:%22\") in the test case.",
+      "range": {
+        "startLine": 90,
+        "startChar": 6,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf59e8dd_f75e5f9c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T01:25:25Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "450cc389_24fddbe1",
       "range": {
         "startLine": 90,
         "startChar": 6,
