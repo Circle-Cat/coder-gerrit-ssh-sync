@@ -48,6 +48,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd64bc8b_25bc459c",
+        "filename": "cmd/coder-gerrit-ssh-sync/error_messages.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T06:55:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75431bb5_3a003c3c",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7a96e71_de161ed4",
@@ -578,6 +602,30 @@
       "writtenOn": "2025-01-08T05:14:39Z",
       "side": 1,
       "message": "Consider comparing the whole bi and tc.expected using https://pkg.go.dev/github.com/google/go-cmp/cmp",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 39
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de6b92e5_a447ee3b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-09T06:55:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c37339bb_bde6f141",
       "range": {
         "startLine": 115,
         "startChar": 6,
