@@ -192,6 +192,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c54844a_eaf0dc1c",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2025-01-09T02:11:51Z",
+      "side": 1,
+      "message": "Instead of specifying a single version, I updated the version requirement to state that the tool supports the current and two previous major Go versions, following the Go Release Policy. This change is based on examples provided in go-gerrit and aims to make it easier for users to understand the version requirements.",
+      "parentUuid": "57293d7e_322a0f5b",
+      "range": {
+        "startLine": 42,
+        "startChar": 10,
+        "endLine": 42,
+        "endChar": 15
+      },
+      "revId": "06cb756f6660bcbd054c5ea71177af192d6d7857",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "179ff80b_1410112c",
         "filename": "README.md",
         "patchSetId": 2
