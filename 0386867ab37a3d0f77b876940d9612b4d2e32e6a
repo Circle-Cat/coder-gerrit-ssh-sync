@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98d86638_5a76e270",
+        "filename": "cmd/coder-gerrit-ssh-sync/coderClient.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Moved to package coderclient. Please take a look.",
+      "parentUuid": "4d318e63_6d027154",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b8874c1_561451bc",
@@ -58,6 +76,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "722dc1fa_bcc24c27",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34d07a1f_082461c7",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9205fefc_889ef56b",
@@ -71,6 +107,30 @@
       "writtenOn": "2025-01-10T03:19:39Z",
       "side": 1,
       "message": "Move this above parseflags call?",
+      "range": {
+        "startLine": 155,
+        "startChar": 1,
+        "endLine": 156,
+        "endChar": 45
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f73e76e_b786b45e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9205fefc_889ef56b",
       "range": {
         "startLine": 155,
         "startChar": 1,
@@ -98,6 +158,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6037b2c_00d4a678",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7010ea23_66e5ecd4",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d80a1de8_2335bea7",
@@ -115,6 +193,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31fe8b49_bd449d8b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d80a1de8_2335bea7",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80724e94_834f866b",
@@ -128,6 +224,30 @@
       "writtenOn": "2025-01-10T03:19:39Z",
       "side": 1,
       "message": "I might do:\n\n```\nurl :\u003d server.URL\nif tc.baseURL !\u003d \"\" {\n  url \u003d tc.baseURL\n}\nclient \u003d newCoderClient(url, \"test-token\")\n```",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 100,
+        "endChar": 4
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2169fbf_7a265627",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80724e94_834f866b",
       "range": {
         "startLine": 93,
         "startChar": 3,
@@ -168,6 +288,30 @@
       "writtenOn": "2025-01-10T03:19:39Z",
       "side": 1,
       "message": "Add a \\n for better output formatting.",
+      "range": {
+        "startLine": 113,
+        "startChar": 62,
+        "endLine": 113,
+        "endChar": 63
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "635bdf8a_103da48c",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-10T09:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0ea4181_157e1de2",
       "range": {
         "startLine": 113,
         "startChar": 62,
