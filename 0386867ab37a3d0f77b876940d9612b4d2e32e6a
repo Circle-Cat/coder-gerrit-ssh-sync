@@ -16,6 +16,166 @@
       "message": "Can this be moved to a separate package instead of staying inside main?",
       "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b8874c1_561451bc",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "Maybe make this an interface to allow easier mocking later.",
+      "range": {
+        "startLine": 120,
+        "startChar": 42,
+        "endLine": 120,
+        "endChar": 54
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34d07a1f_082461c7",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "Remove",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9205fefc_889ef56b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "Move this above parseflags call?",
+      "range": {
+        "startLine": 155,
+        "startChar": 1,
+        "endLine": 156,
+        "endChar": 45
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7010ea23_66e5ecd4",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "Maybe move this into parseflags too?",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d80a1de8_2335bea7",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "https://google.github.io/styleguide/go/decisions#import-grouping",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80724e94_834f866b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "I might do:\n\n```\nurl :\u003d server.URL\nif tc.baseURL !\u003d \"\" {\n  url \u003d tc.baseURL\n}\nclient \u003d newCoderClient(url, \"test-token\")\n```",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 100,
+        "endChar": 4
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "356933e7_622d11e5",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "https://google.github.io/styleguide/go/decisions#indent-error-flow\n\nand https://testing.googleblog.com/2017/06/code-health-reduce-nesting-reduce.html",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0ea4181_157e1de2",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T03:19:39Z",
+      "side": 1,
+      "message": "Add a \\n for better output formatting.",
+      "range": {
+        "startLine": 113,
+        "startChar": 62,
+        "endLine": 113,
+        "endChar": 63
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
