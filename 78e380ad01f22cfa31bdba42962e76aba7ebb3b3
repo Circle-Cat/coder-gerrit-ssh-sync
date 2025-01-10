@@ -72,6 +72,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b6e1da8_5fe90884",
+        "filename": "cmd/coder-gerrit-ssh-sync/error_messages.go",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-10T00:41:02Z",
+      "side": 1,
+      "message": "It\u0027s almost a counterexample of https://google.github.io/styleguide/go/decisions#constant-names because I don\u0027t see \"CODER_SESSION_TOKEN_MISSING_ERROR\" or \"ErrSessionTokenMissing\" providing more information than the string itself. It\u0027s probably useful if it\u0027s used multiple times and must be kept the same (e.g. returned as an error message somewhere and checked for in tests) to avoid accidental minor deviation, but it doesn\u0027t seem to be the case here.",
+      "parentUuid": "fd64bc8b_25bc459c",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "78e380ad01f22cfa31bdba42962e76aba7ebb3b3",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7a96e71_de161ed4",
