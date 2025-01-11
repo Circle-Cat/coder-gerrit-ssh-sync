@@ -45,6 +45,30 @@
       },
       "revId": "97ce12bcfa8ff4ff9c6ce42738fd67d0631a99ec",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f380219_2d7248ee",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-11T03:19:03Z",
+      "side": 1,
+      "message": "See https://github.com/golang-standards/project-layout",
+      "parentUuid": "8103687b_77b65c84",
+      "range": {
+        "startLine": 28,
+        "startChar": 49,
+        "endLine": 28,
+        "endChar": 52
+      },
+      "revId": "97ce12bcfa8ff4ff9c6ce42738fd67d0631a99ec",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
