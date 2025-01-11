@@ -69,6 +69,54 @@
       },
       "revId": "97ce12bcfa8ff4ff9c6ce42738fd67d0631a99ec",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e990a952_c32a0cd6",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-11T07:40:55Z",
+      "side": 1,
+      "message": "Moved under pkg/coderclient. Please take a look.",
+      "parentUuid": "3f380219_2d7248ee",
+      "range": {
+        "startLine": 28,
+        "startChar": 49,
+        "endLine": 28,
+        "endChar": 52
+      },
+      "revId": "97ce12bcfa8ff4ff9c6ce42738fd67d0631a99ec",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "510bdcfd_44200142",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 34
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-11T07:40:55Z",
+      "side": 1,
+      "message": "I changed to coderclient. PTAL.",
+      "parentUuid": "c7636efc_5aefe9dc",
+      "range": {
+        "startLine": 28,
+        "startChar": 75,
+        "endLine": 28,
+        "endChar": 86
+      },
+      "revId": "97ce12bcfa8ff4ff9c6ce42738fd67d0631a99ec",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }

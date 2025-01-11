@@ -83,6 +83,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56f1a0c8_b63f69c2",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-11T07:40:55Z",
+      "side": 1,
+      "message": "As discussed in chat, will leave it for now. Possible change to interface when write unit test for syncUser.",
+      "parentUuid": "6b8874c1_561451bc",
+      "range": {
+        "startLine": 120,
+        "startChar": 42,
+        "endLine": 120,
+        "endChar": 54
+      },
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34d07a1f_082461c7",
@@ -295,6 +319,24 @@
       "writtenOn": "2025-01-10T03:19:39Z",
       "side": 1,
       "message": "https://google.github.io/styleguide/go/decisions#indent-error-flow\n\nand https://testing.googleblog.com/2017/06/code-health-reduce-nesting-reduce.html",
+      "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3cfd1f4_14cd7a28",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 32
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-11T07:40:55Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "356933e7_622d11e5",
       "revId": "0386867ab37a3d0f77b876940d9612b4d2e32e6a",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
