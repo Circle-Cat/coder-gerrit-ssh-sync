@@ -5,3 +5,6 @@ linters:
     - format
     - sql
     - unused
+  disable:
+    - gci
+    - gofumpt
