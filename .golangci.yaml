@@ -1,0 +1,7 @@
+linters:
+  presets:
+    - bugs
+    - comment
+    - format
+    - sql
+    - unused
