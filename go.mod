@@ -1,6 +1,7 @@
 module github.com/jingyuanliang/coder-gerrit-ssh-sync
 
 go 1.23
+toolchain go1.23.4
 
 require (
 	github.com/andygrunwald/go-gerrit v1.0.0
