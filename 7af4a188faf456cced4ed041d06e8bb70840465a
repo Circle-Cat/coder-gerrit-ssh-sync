@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "305f7a04_cc2c6ac9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T21:52:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "abd24c64_3dd206c9",
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42a96598_7381c336",
@@ -41,6 +59,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f517db5f_ab651b44",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T21:52:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "42a96598_7381c336",
+      "range": {
+        "startLine": 182,
+        "startChar": 9,
+        "endLine": 182,
+        "endChar": 27
+      },
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1ee20b2_fb0f0a94",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-01-15T14:43:42Z",
       "side": 1,
       "message": "not necessary to declare this beforehand. Just `client :\u003d ...` below.",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 93,
+        "endChar": 26
+      },
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90d67886_4faf2a52",
+        "filename": "pkg/coderclient/client_test.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T21:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1ee20b2_fb0f0a94",
       "range": {
         "startLine": 93,
         "startChar": 3,
