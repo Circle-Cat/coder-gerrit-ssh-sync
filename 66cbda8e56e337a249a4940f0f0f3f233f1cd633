@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a8b6c76_0afb91af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 40
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T07:48:23Z",
+      "side": 1,
+      "message": "Done. Please take a look.",
+      "parentUuid": "435fc145_34586a39",
+      "revId": "66cbda8e56e337a249a4940f0f0f3f233f1cd633",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "156c04fd_9d34e6ba",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-01-14T09:13:01Z",
       "side": 1,
       "message": "I\u0027d rather have this line at the beginning of main()?",
+      "range": {
+        "startLine": 77,
+        "startChar": 37,
+        "endLine": 77,
+        "endChar": 44
+      },
+      "revId": "66cbda8e56e337a249a4940f0f0f3f233f1cd633",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "391ec883_760564e1",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 40
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T07:48:23Z",
+      "side": 1,
+      "message": "I moved to top of main().",
+      "parentUuid": "156c04fd_9d34e6ba",
       "range": {
         "startLine": 77,
         "startChar": 37,
@@ -64,6 +106,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97910c6f_a67db186",
+        "filename": "pkg/coderclient/client.go",
+        "patchSetId": 40
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T07:48:23Z",
+      "side": 1,
+      "message": "Done. I also added comments to other two exported structs. Please take a look.",
+      "parentUuid": "d79d13a8_2052f867",
+      "range": {
+        "startLine": 27,
+        "startChar": 3,
+        "endLine": 27,
+        "endChar": 10
+      },
+      "revId": "66cbda8e56e337a249a4940f0f0f3f233f1cd633",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf8bb9f0_4e8649e7",
@@ -87,6 +153,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b876237_9a2f1b0a",
+        "filename": "pkg/coderclient/client.go",
+        "patchSetId": 40
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T07:48:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf8bb9f0_4e8649e7",
+      "range": {
+        "startLine": 36,
+        "startChar": 3,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "66cbda8e56e337a249a4940f0f0f3f233f1cd633",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "785d567b_53de989b",
@@ -100,6 +190,30 @@
       "writtenOn": "2025-01-14T09:13:01Z",
       "side": 1,
       "message": "http.StatusOK",
+      "range": {
+        "startLine": 58,
+        "startChar": 23,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "66cbda8e56e337a249a4940f0f0f3f233f1cd633",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec492bcf_8393c777",
+        "filename": "pkg/coderclient/client.go",
+        "patchSetId": 40
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-01-15T07:48:23Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "785d567b_53de989b",
       "range": {
         "startLine": 58,
         "startChar": 23,
