@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abd24c64_3dd206c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-15T14:43:42Z",
+      "side": 1,
+      "message": "consider adding a few more test cases, most notably the http method and that path and token are correctly passed in. Can be deferred for later.",
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42a96598_7381c336",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-15T14:43:42Z",
+      "side": 1,
+      "message": "consider moving into coderclient package too. Can be deferred until you refactor the syncUser function.",
+      "range": {
+        "startLine": 182,
+        "startChar": 9,
+        "endLine": 182,
+        "endChar": 27
+      },
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1ee20b2_fb0f0a94",
+        "filename": "pkg/coderclient/client_test.go",
+        "patchSetId": 41
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-01-15T14:43:42Z",
+      "side": 1,
+      "message": "not necessary to declare this beforehand. Just `client :\u003d ...` below.",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 93,
+        "endChar": 26
+      },
+      "revId": "7af4a188faf456cced4ed041d06e8bb70840465a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
