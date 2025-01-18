@@ -16,6 +16,24 @@
       "message": "How about make it a receiver？",
       "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b87aa3b2_533b1d45",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T08:13:01Z",
+      "side": 1,
+      "message": "https://www.bradcypert.com/go-receiver-function/#:~:text\u003dGo%27s%20receiver%20function%20allows%20you%20to%20define%20functions,still%20quite%20different%20from%20instance%20methods%20in%20OOP.",
+      "parentUuid": "cf191369_b5cfc040",
+      "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
