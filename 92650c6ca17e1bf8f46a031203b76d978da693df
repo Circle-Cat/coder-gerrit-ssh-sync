@@ -34,6 +34,23 @@
       "parentUuid": "cf191369_b5cfc040",
       "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b46254b7_cd4ed926",
+        "filename": "pkg/gerritclient/client.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T08:33:01Z",
+      "side": 1,
+      "message": "https://go.dev/doc/effective_go#interface-names",
+      "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
