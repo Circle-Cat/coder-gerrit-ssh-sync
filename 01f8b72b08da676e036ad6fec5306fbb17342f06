@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5f62e3b_c2f3f150",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T07:58:50Z",
+      "side": 1,
+      "message": "Could you make this title more specific?",
+      "revId": "01f8b72b08da676e036ad6fec5306fbb17342f06",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c072109_2796c655",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T07:58:50Z",
+      "side": 1,
+      "message": "There are many changes here. You could try to narrow it down further, or perhaps explain your changes and their purpose in the commit message?",
+      "revId": "01f8b72b08da676e036ad6fec5306fbb17342f06",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
