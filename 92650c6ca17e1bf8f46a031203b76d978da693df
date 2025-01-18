@@ -51,6 +51,23 @@
       "message": "https://go.dev/doc/effective_go#interface-names",
       "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94730fb8_53b819fa",
+        "filename": "pkg/gerritclient/client_test.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T09:08:27Z",
+      "side": 1,
+      "message": "How about add more scenario, such as invalid ssh key format.",
+      "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
