@@ -25,6 +25,16 @@ type CoderBuildInfoResponse struct {
 	Version string `json:"version"`
 }
 
+type CoderUsersResponse struct {
+	Users []CoderUser `json:"users"`
+}
+
+type CoderUser struct {
+	Email    string `json:"email"`
+	ID       string `json:"id"`
+	Username string `json:"username"`
+}
+
 // NewCoderClient returns a pointer coderClient (reference).
 func NewCoderClient(url string, token string) *CoderClient {
 	return &CoderClient{
