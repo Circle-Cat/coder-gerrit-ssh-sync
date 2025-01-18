@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf191369_b5cfc040",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-18T08:10:23Z",
+      "side": 1,
+      "message": "How about make it a receiver？",
+      "revId": "92650c6ca17e1bf8f46a031203b76d978da693df",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
