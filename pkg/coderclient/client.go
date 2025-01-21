@@ -10,19 +10,36 @@ import (
 
 // CoderClient is a client for interacting with the Coder API.
 type CoderClient struct {
-	// url is the base URL of Coder API
+	// url is the base URL of Coder API.
 	url string
 
-	// token is the authentication token for API requests
+	// token is the authentication token for API requests.
 	token string
 
-	// client is the HTTP client used to make requests to Coder API
+	// client is the HTTP client used to make requests to Coder API.
 	client *http.Client
 }
 
 // CoderBuildInfoResponse includes the version of the Coder system.
 type CoderBuildInfoResponse struct {
 	Version string `json:"version"`
+}
+
+// CoderUsersResponse represents list of users retrieved from API.
+type CoderUsersResponse struct {
+	Users []CoderUser `json:"users"`
+}
+
+// CoderUserGitSSHKeyResponse includes user SSH key.
+type CoderUserGitSSHKeyResponse struct {
+	PublicKey string `json:"public_key"`
+}
+
+// CoderUser represents the user details retrieved from Coder API.
+type CoderUser struct {
+	Email    string `json:"email"`
+	ID       string `json:"id"`
+	Username string `json:"username"`
 }
 
 // NewCoderClient returns a pointer coderClient (reference).
@@ -32,6 +49,10 @@ func NewCoderClient(url string, token string) *CoderClient {
 		token:  token,
 		client: http.DefaultClient, // Assign http global client reference to client
 	}
+}
+
+func (u *CoderUser) String() string {
+	return fmt.Sprintf("%s (%s, %s)", u.Username, u.ID, u.Email)
 }
 
 // Get sends an HTTP GET request to the specified path using the coderClient.
