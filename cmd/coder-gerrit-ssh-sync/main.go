@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 // Package main is the entrypoint for coder-gerrit-ssh-sync.
-package main
+package main 
 
 import (
 	"context"
