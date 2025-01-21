@@ -1,6 +1,10 @@
 # Go app template build environment
 
-This is a skeleton project for a Go application, which captures the best build
+
+
+T
+
+his is a skeleton project for a Go application, which captures the best build
 techniques I have learned to date.  It uses a Makefile to drive the build (the
 universal API to software projects) and a Dockerfile to build a docker image.
 
