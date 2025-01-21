@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "201f10f4_c5450371",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2025-01-21T07:45:16Z",
+      "side": 1,
+      "message": "How about make it a receiver for CoderUser struct？",
+      "revId": "f148dfb4f534fe0bcdeb5739f4109f6097c84c69",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
