@@ -22,6 +22,30 @@
       },
       "revId": "d21462fcccb28cb7538bb4e71f39e249db29278b",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0994c1f_29fecac7",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2025-01-22T03:13:23Z",
+      "side": 1,
+      "message": "I used both mdformat and prettier to format the file but the line breaks seem the same. Is there any other tools you recommend to use for better formating the markdown?",
+      "parentUuid": "790bc475_5fe005ae",
+      "range": {
+        "startLine": 7,
+        "startChar": 62,
+        "endLine": 13,
+        "endChar": 116
+      },
+      "revId": "d21462fcccb28cb7538bb4e71f39e249db29278b",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
