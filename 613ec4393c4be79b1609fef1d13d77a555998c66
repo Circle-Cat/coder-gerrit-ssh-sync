@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d347428_9c95cbc7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "You can add in go.mod:\n\n```\nreplace github.com/andygrunwald/go-gerrit \u003d\u003e github.com/christinak09/go-gerrit add-ssh-key-feature\n```\n\nThen `go mod tidy` and `go mod vendor` to use your patched code before it\u0027s merged upstream.\n\nI\u0027ll review the rest assuming this is done (meaning I\u0027ll skip those no longer needed).",
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54b99069_eedafd09",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "Will no longer need to mock these two, but will need to mock AddSSHKey.\n\nThese two are all in AccountsService (client.Accounts), so client.Accounts should naturally satisfy this interface and you don\u0027t need the wrappers below.",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 63
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13e3f5f4_a36fb9bf",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "Move this to coderclient?",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 1
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "179c13e9_a55a096e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "This whole function will be ditched in favor of the implementation in go-gerrit.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 1
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2227079d_454bcc57",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "The core need of this test is to verify AddSSHKey is called with the correct arguments (using data from user and results of mocked QueryAccounts). The test cases don\u0027t seem to reflect these.",
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b42b3e01_f5e1ad9b",
+        "filename": "pkg/coderclient/client.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-04T14:31:20Z",
+      "side": 1,
+      "message": "Hmm did you mean to make a different String() later? The Stringer is a well-known interface. https://go.dev/tour/methods/17",
+      "range": {
+        "startLine": 49,
+        "startChar": 20,
+        "endLine": 49,
+        "endChar": 35
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
