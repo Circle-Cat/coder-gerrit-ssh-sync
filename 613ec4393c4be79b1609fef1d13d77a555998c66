@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "431966ba_301b3981",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "Got it. Thanks.",
+      "parentUuid": "9d347428_9c95cbc7",
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54b99069_eedafd09",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-02-04T14:31:20Z",
       "side": 1,
       "message": "Will no longer need to mock these two, but will need to mock AddSSHKey.\n\nThese two are all in AccountsService (client.Accounts), so client.Accounts should naturally satisfy this interface and you don\u0027t need the wrappers below.",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 63
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "979be887_1ea7f491",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "54b99069_eedafd09",
       "range": {
         "startLine": 41,
         "startChar": 1,
@@ -64,6 +106,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4315ce4_8084b21d",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13e3f5f4_a36fb9bf",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 1
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "179c13e9_a55a096e",
@@ -77,6 +143,30 @@
       "writtenOn": "2025-02-04T14:31:20Z",
       "side": 1,
       "message": "This whole function will be ditched in favor of the implementation in go-gerrit.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 1
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c56d65a5_86678782",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "179c13e9_a55a096e",
       "range": {
         "startLine": 133,
         "startChar": 0,
@@ -104,6 +194,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf0c4731_63155a9e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "I added couple more test cases. Ptal.",
+      "parentUuid": "2227079d_454bcc57",
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b42b3e01_f5e1ad9b",
@@ -117,6 +225,30 @@
       "writtenOn": "2025-02-04T14:31:20Z",
       "side": 1,
       "message": "Hmm did you mean to make a different String() later? The Stringer is a well-known interface. https://go.dev/tour/methods/17",
+      "range": {
+        "startLine": 49,
+        "startChar": 20,
+        "endLine": 49,
+        "endChar": 35
+      },
+      "revId": "613ec4393c4be79b1609fef1d13d77a555998c66",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26f9a4b8_9735bc0c",
+        "filename": "pkg/coderclient/client.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000072
+      },
+      "writtenOn": "2025-02-10T08:18:25Z",
+      "side": 1,
+      "message": "I changed back to String(). Thanks.",
+      "parentUuid": "b42b3e01_f5e1ad9b",
       "range": {
         "startLine": 49,
         "startChar": 20,
