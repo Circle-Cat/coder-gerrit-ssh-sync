@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2c6d5f0_1132cc29",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "gerritAccountService?",
+      "range": {
+        "startLine": 33,
+        "startChar": 3,
+        "endLine": 33,
+        "endChar": 23
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e19aed8_5e2aae7b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "These are likely not necessary anymore, if you don\u0027t wrap *gerrit.Client further to become gerritClient",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 1
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62873053_29e4368e",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "just gerrit.Client",
+      "range": {
+        "startLine": 98,
+        "startChar": 103,
+        "endLine": 98,
+        "endChar": 115
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff0d55aa_2df72d0f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "client",
+      "range": {
+        "startLine": 110,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 2
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64e62486_84cb3d49",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "find a different name to distinguish with the real gerrit client?",
+      "range": {
+        "startLine": 120,
+        "startChar": 68,
+        "endLine": 120,
+        "endChar": 75
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ee5b823_4c2e4cfa",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-10T20:16:03Z",
+      "side": 1,
+      "message": "gerritClient.Accounts\n\nThis is the key part that allows eliminating the gerritClient wrapper.",
+      "range": {
+        "startLine": 204,
+        "startChar": 35,
+        "endLine": 204,
+        "endChar": 42
+      },
+      "revId": "be91ac76f295dc587224ddf42a4a2d9afe78cf63",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
