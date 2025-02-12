@@ -23,7 +23,7 @@ type MockGerritClient struct {
 }
 
 // queryAccounts simulates the QueryAccounts in Gerrit and returns preconfigured mock data and errors.
-func (m *MockGerritClient) queryAccounts(ctx context.Context, opts *gerrit.QueryAccountOptions) (*[]gerrit.AccountInfo, *gerrit.Response, error) {
+func (m *MockGerritClient) QueryAccounts(ctx context.Context, opts *gerrit.QueryAccountOptions) (*[]gerrit.AccountInfo, *gerrit.Response, error) {
 
 	if m.QueryErr != nil {
 		return nil, nil, m.QueryErr
@@ -43,7 +43,7 @@ func (m *MockGerritClient) queryAccounts(ctx context.Context, opts *gerrit.Query
 }
 
 // // addSSHKey simulate AddSSHKey in Gerrit and return preconfigured mock data and errors.
-func (m *MockGerritClient) addSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error) {
+func (m *MockGerritClient) AddSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error) {
 	m.CallCount++
 	args := m.Called(ctx, accountID, sshKey)
 
@@ -257,7 +257,7 @@ func TestSyncUser(t *testing.T) {
 					loopExpectedIDs = tc.expectedIDs
 				}
 				for _, tmpExpectedID := range loopExpectedIDs {
-					tc.mockGerrit.On("addSSHKey", ctx, tmpExpectedID, tc.expectedKey).
+					tc.mockGerrit.On("AddSSHKey", ctx, tmpExpectedID, tc.expectedKey).
 						Return(&gerrit.SSHKeyInfo{}, &gerrit.Response{}, tc.mockGerrit.AddSSHKeyErr).
 						Times(tc.expectCalls)
 				}
@@ -278,7 +278,7 @@ func TestSyncUser(t *testing.T) {
 			assert.Equal(t, tc.expectCalls, tc.mockGerrit.CallCount)
 
 			if tc.expectCalls == 0 {
-				tc.mockGerrit.AssertNotCalled(t, "addSSHKey")
+				tc.mockGerrit.AssertNotCalled(t, "AddSSHKey")
 				return
 			}
 
@@ -288,7 +288,7 @@ func TestSyncUser(t *testing.T) {
 				loopExpectedIDs = tc.expectedIDs
 			}
 			for _, tmpExpectedID := range loopExpectedIDs {
-				tc.mockGerrit.AssertCalled(t, "addSSHKey", ctx, tmpExpectedID, tc.expectedKey)
+				tc.mockGerrit.AssertCalled(t, "AddSSHKey", ctx, tmpExpectedID, tc.expectedKey)
 			}
 		})
 	}

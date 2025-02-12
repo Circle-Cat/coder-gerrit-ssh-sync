@@ -34,25 +34,10 @@ import (
 type gerritAccountService interface {
 
 	// queryAccounts queries Gerrit accounts based on the provided account options.
-	queryAccounts(ctx context.Context, opts *gerrit.QueryAccountOptions) (*[]gerrit.AccountInfo, *gerrit.Response, error)
+	QueryAccounts(ctx context.Context, opts *gerrit.QueryAccountOptions) (*[]gerrit.AccountInfo, *gerrit.Response, error)
 
 	// addSSHKey add Coder SSH key to corresponding Gerrit accounts.
-	addSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error)
-}
-
-// gerritClient is a client for interacting with the Gerrit.
-type gerritClient struct {
-	client *gerrit.Client
-}
-
-// queryAccounts retrieves a list of Gerrit accounts based on specified account options.
-func (g *gerritClient) queryAccounts(ctx context.Context, opts *gerrit.QueryAccountOptions) (*[]gerrit.AccountInfo, *gerrit.Response, error) {
-	return g.client.Accounts.QueryAccounts(ctx, opts)
-}
-
-// addSSHKey add Coder SSH key to corresponding Gerrit accounts.
-func (g *gerritClient) addSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error) {
-	return g.client.Accounts.AddSSHKey(ctx, accountID, sshKey)
+	AddSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error)
 }
 
 type config struct {
@@ -95,7 +80,7 @@ func parseFlags() *config {
 
 // newGerritClient initializes and returns a new Gerrit client with authentication.
 // It sets up the client using the provided username and password and API endpoint.
-func newGerritClient(ctx context.Context, path string, gerritUsername string, gerritPassword string) (*gerritClient, error) {
+func newGerritClient(ctx context.Context, path string, gerritUsername string, gerritPassword string) (*gerrit.Client, error) {
 
 	// Creates a Gerrit client using the provided base URL path.
 	client, err := gerrit.NewClient(ctx, path, nil)
@@ -107,9 +92,7 @@ func newGerritClient(ctx context.Context, path string, gerritUsername string, ge
 		client.Authentication.SetBasicAuth(gerritUsername, gerritPassword)
 	}
 
-	return &gerritClient{
-		client: client,
-	}, nil
+	return client, nil
 }
 
 // syncUser synchronizes Coder user's SSH key with corresponding Gerrit accounts
@@ -120,7 +103,7 @@ func newGerritClient(ctx context.Context, path string, gerritUsername string, ge
 func syncUser(ctx context.Context, client *coderclient.CoderClient, gClient gerritAccountService, user *coderclient.CoderUser) error {
 	// Make API call to search gerrit account using email
 	log.Printf("Syncing user %q", user)
-	gus, _, err := gClient.queryAccounts(ctx, &gerrit.QueryAccountOptions{
+	gus, _, err := gClient.QueryAccounts(ctx, &gerrit.QueryAccountOptions{
 		QueryOptions: gerrit.QueryOptions{
 			Query: []string{
 				fmt.Sprintf("email:%q", user.Email),
@@ -154,7 +137,7 @@ func syncUser(ctx context.Context, client *coderclient.CoderClient, gClient gerr
 		}
 
 		log.Printf("Got Gerrit user AccountID %d for Coder user %q", gu.AccountID, user)
-		_, _, err = gClient.addSSHKey(ctx, fmt.Sprintf("%d", gu.AccountID), key.PublicKey)
+		_, _, err = gClient.AddSSHKey(ctx, fmt.Sprintf("%d", gu.AccountID), key.PublicKey)
 
 		if err != nil {
 			errs = append(errs, fmt.Errorf("Failed to add SSH key for Gerrit user %d: %w", gu.AccountID, err))
@@ -178,7 +161,7 @@ func main() {
 		log.Fatalf("Failed to initialize Gerrit client: %v", err)
 	}
 
-	gv, _, err := gClient.client.Config.GetVersion(ctx)
+	gv, _, err := gClient.Config.GetVersion(ctx)
 	if err != nil {
 		log.Fatalf("Check Gerrit version: %v", err)
 	}
@@ -201,7 +184,7 @@ func main() {
 		if config.filterOnly != "" && cu.Email != config.filterOnly {
 			continue
 		}
-		if err := syncUser(ctx, cClient, gClient, &cu); err != nil {
+		if err := syncUser(ctx, cClient, gClient.Accounts, &cu); err != nil {
 			log.Printf("Error syncing user %q: %v", cu, err)
 		}
 	}
