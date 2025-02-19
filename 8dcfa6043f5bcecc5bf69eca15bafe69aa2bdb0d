@@ -118,6 +118,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a013575_b0187fba",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-19T08:53:51Z",
+      "side": 1,
+      "message": "Oh does it mean when expectCalls is 0, expectedID/expectedIDs/expectedKey are effectively ignored? If it\u0027s the case, let\u0027s just not include them.",
+      "parentUuid": "dabfce10_22c16d4e",
+      "range": {
+        "startLine": 128,
+        "startChar": 16,
+        "endLine": 128,
+        "endChar": 21
+      },
+      "revId": "8dcfa6043f5bcecc5bf69eca15bafe69aa2bdb0d",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c9fa3eda_b93cb27f",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 7
