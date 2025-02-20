@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbd76848_95d9aa7b",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "I suspect you don\u0027t need expectedCalls at all, since it universally equals to `len(tc.expectedIDs)` now (as mentioned above, length of a nil slice is zero).",
+      "range": {
+        "startLine": 231,
+        "startChar": 3,
+        "endLine": 231,
+        "endChar": 26
+      },
+      "revId": "4887883726cb85973330f4635d51881f4f9bb605",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "502328fa_6e8d0354",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "Find a shorter name? https://google.github.io/styleguide/go/decisions.html#variable-names",
+      "range": {
+        "startLine": 233,
+        "startChar": 11,
+        "endLine": 233,
+        "endChar": 24
+      },
+      "revId": "4887883726cb85973330f4635d51881f4f9bb605",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ba68672_e3ad8d18",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "I think this should be `Once()`, because you are already registering `.On()` for tc.expectCalls times, so each registration is to be called once.",
+      "range": {
+        "startLine": 236,
+        "startChar": 6,
+        "endLine": 236,
+        "endChar": 27
+      },
+      "revId": "4887883726cb85973330f4635d51881f4f9bb605",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "903e89e5_9498869f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 8
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 254,
+        "startChar": 10,
+        "endLine": 254,
+        "endChar": 23
+      },
+      "revId": "4887883726cb85973330f4635d51881f4f9bb605",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}

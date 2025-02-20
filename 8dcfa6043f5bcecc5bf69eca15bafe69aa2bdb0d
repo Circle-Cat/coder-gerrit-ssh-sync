@@ -144,6 +144,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "64c78740_0479988f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "Hmm the go-gerrit library seems never returning `nil, nil, nil`.\n\nReturning `\u0026m.QueryResult, nil, nil` shouldn\u0027t cause SyncUser to fail even if `m.QueryResult` is nil.\n\nThen we don\u0027t need this `if` clause (just fall through to `\u0026m.QueryResult, mockResponse, nil`).",
+      "parentUuid": "3e2a872d_98cbc9dc",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 24
+      },
+      "revId": "8dcfa6043f5bcecc5bf69eca15bafe69aa2bdb0d",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a55b3c4a_9c018471",
         "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
         "patchSetId": 7
@@ -344,6 +368,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "e1b710f4_365d58ba",
+      "range": {
+        "startLine": 268,
+        "startChar": 3,
+        "endLine": 268,
+        "endChar": 43
+      },
+      "revId": "8dcfa6043f5bcecc5bf69eca15bafe69aa2bdb0d",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5815f783_a7d440d8",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 7
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-02-20T07:10:34Z",
+      "side": 1,
+      "message": "Not done?",
+      "parentUuid": "e8d01535_d20d181d",
       "range": {
         "startLine": 268,
         "startChar": 3,
