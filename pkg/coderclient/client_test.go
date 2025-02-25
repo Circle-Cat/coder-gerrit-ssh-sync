@@ -74,7 +74,7 @@ func TestGet(t *testing.T) {
 			expected:  CoderBuildInfoResponse{},
 			expectErr: true,
 			inputPath: "/api/v2/buildinfo",
-			baseURL:   "http://192.0.2.1",
+			baseURL:   "http://coder.invalid",
 		},
 	}
 
