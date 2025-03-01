@@ -206,6 +206,23 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr: true,
 		},
+		{
+			//  Inactive Gerrit accountId
+			name: "Inactive_AccountID",
+			mockGerrit: &MockGerritClient{
+				QueryResult: []gerrit.AccountInfo{{AccountID: 123, Inactive: true}},
+				QueryErr:    nil,
+			},
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+			},
+			user: &coderclient.CoderUser{
+				Email:    "test@example.com",
+				ID:       "user123",
+				Username: "testUser1",
+			},
+			expectErr: false,
+		},
 	}
 
 	for _, tc := range testCases {
