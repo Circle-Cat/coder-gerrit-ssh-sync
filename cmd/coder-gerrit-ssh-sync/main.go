@@ -132,6 +132,11 @@ func syncUser(ctx context.Context, client *coderclient.CoderClient, gAccountServ
 	var errs []error
 	for _, gu := range *gus {
 
+		if gu.Inactive {
+			log.Printf("Skipping inactive Gerrit user AccountID: %d", gu.AccountID)
+			continue
+		}
+
 		if gu.AccountID <= 0 {
 			log.Printf("Skipping invalid Gerrit user AccountID %d", gu.AccountID)
 			continue
