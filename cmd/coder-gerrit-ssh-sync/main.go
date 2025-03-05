@@ -39,6 +39,9 @@ type gerritAccountsService interface {
 
 	// AddSSHKey add Coder SSH key to corresponding Gerrit accounts.
 	AddSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error)
+
+	// ListSSHKey to corresponding Gerrit accounts.
+	ListSSHKeys(ctx context.Context, accountID string) (*[]gerrit.SSHKeyInfo, *gerrit.Response, error)
 }
 
 type config struct {
@@ -130,6 +133,7 @@ func syncUser(ctx context.Context, client *coderclient.CoderClient, gAccountServ
 	log.Printf("Got Git SSH key for user %q: %s", user, key.PublicKey)
 
 	var errs []error
+UserLoop:
 	for _, gu := range *gus {
 
 		if gu.Inactive {
@@ -142,11 +146,24 @@ func syncUser(ctx context.Context, client *coderclient.CoderClient, gAccountServ
 			continue
 		}
 
+		existingKeys, _, err := gAccountService.ListSSHKeys(ctx, strconv.Itoa(gu.AccountID))
+		if err != nil {
+			errs = append(errs, fmt.Errorf("failed to get existing SSH keys for Gerrit user %d: %w", gu.AccountID, err))
+			continue
+		}
+
+		for _, existingKey := range *existingKeys {
+			if existingKey.SSHPublicKey == key.PublicKey {
+				log.Printf("SSH key already exists for Gerrit user %d, skipping...", gu.AccountID)
+				continue UserLoop
+			}
+		}
+
 		log.Printf("Got Gerrit user AccountID %d for Coder user %q", gu.AccountID, user)
 		_, _, err = gAccountService.AddSSHKey(ctx, strconv.Itoa(gu.AccountID), key.PublicKey)
 
 		if err != nil {
-			errs = append(errs, fmt.Errorf("Failed to add SSH key for Gerrit user %d: %w", gu.AccountID, err))
+			errs = append(errs, fmt.Errorf("failed to add SSH key for Gerrit user %d: %w", gu.AccountID, err))
 			continue
 		}
 		log.Printf("Added SSH key %q: %v", user, key.PublicKey)
