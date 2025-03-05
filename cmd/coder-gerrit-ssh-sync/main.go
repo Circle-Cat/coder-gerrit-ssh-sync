@@ -39,6 +39,9 @@ type gerritAccountsService interface {
 
 	// AddSSHKey add Coder SSH key to corresponding Gerrit accounts.
 	AddSSHKey(ctx context.Context, accountID string, sshKey string) (*gerrit.SSHKeyInfo, *gerrit.Response, error)
+
+	// ListSSHKey to corresponding Gerrit accounts.
+	ListSSHKeys(ctx context.Context, accountID string) (*[]gerrit.SSHKeyInfo, *gerrit.Response, error)
 }
 
 type config struct {
@@ -139,6 +142,25 @@ func syncUser(ctx context.Context, client *coderclient.CoderClient, gAccountServ
 
 		if gu.AccountID <= 0 {
 			log.Printf("Skipping invalid Gerrit user AccountID %d", gu.AccountID)
+			continue
+		}
+
+		existingKeys, _, err := gAccountService.ListSSHKeys(ctx, strconv.Itoa(gu.AccountID))
+		if err != nil {
+			errs = append(errs, fmt.Errorf("Failed to get existing SSH keys for Gerrit user %d: %w", gu.AccountID, err))
+			continue
+		}
+
+		keyExists := false
+		for _, existingKey := range *existingKeys {
+			if existingKey.SSHPublicKey == key.PublicKey {
+				keyExists = true
+				break
+			}
+		}
+
+		if keyExists {
+			log.Printf("SSH key already exists for Gerrit user %d, skipping...", gu.AccountID)
 			continue
 		}
 
