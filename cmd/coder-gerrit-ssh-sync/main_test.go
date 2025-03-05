@@ -15,11 +15,11 @@ import (
 
 type MockGerritClient struct {
 	mock.Mock
-	QueryResult  []gerrit.AccountInfo
-	QueryErr     error
-	AddSSHKeyErr error
+	QueryResult       []gerrit.AccountInfo
+	QueryErr          error
+	AddSSHKeyErr      error
 	ListSSHKeysResult []gerrit.SSHKeyInfo
-	ListSSHKeysErr error
+	ListSSHKeysErr    error
 }
 
 // QueryAccounts simulates the QueryAccounts in Gerrit and returns preconfigured mock data and errors.
@@ -71,7 +71,7 @@ func TestSyncUser(t *testing.T) {
 		expectErr    bool
 		expectedIDs  []string
 		expectedKey  string
-		keyExists	 bool
+		keyExists    bool
 	}{
 		{
 			// Successfully sync user.
@@ -245,9 +245,9 @@ func TestSyncUser(t *testing.T) {
 			//  Key Already Exists in Garrit
 			name: "Key_Already_Exists",
 			mockGerrit: &MockGerritClient{
-				QueryResult: []gerrit.AccountInfo{{AccountID: 123}},
+				QueryResult:       []gerrit.AccountInfo{{AccountID: 123}},
 				ListSSHKeysResult: []gerrit.SSHKeyInfo{{SSHPublicKey: "ssh-rsa AAAAB3NzaC1yc2E"}},
-				QueryErr: nil,
+				QueryErr:          nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
 				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
