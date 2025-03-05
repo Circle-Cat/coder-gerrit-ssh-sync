@@ -15,9 +15,11 @@ import (
 
 type MockGerritClient struct {
 	mock.Mock
-	QueryResult  []gerrit.AccountInfo
-	QueryErr     error
-	AddSSHKeyErr error
+	QueryResult       []gerrit.AccountInfo
+	QueryErr          error
+	AddSSHKeyErr      error
+	ListSSHKeysResult []gerrit.SSHKeyInfo
+	ListSSHKeysErr    error
 }
 
 // QueryAccounts simulates the QueryAccounts in Gerrit and returns preconfigured mock data and errors.
@@ -41,6 +43,21 @@ func (m *MockGerritClient) AddSSHKey(ctx context.Context, accountID string, sshK
 	args := m.Called(ctx, accountID, sshKey)
 
 	return args.Get(0).(*gerrit.SSHKeyInfo), args.Get(1).(*gerrit.Response), args.Error(2)
+}
+
+// ListSSHKeys simulates ListSSHKeys in Gerrit and returns preconfigured mock data and errors.
+func (m *MockGerritClient) ListSSHKeys(ctx context.Context, accountID string) (*[]gerrit.SSHKeyInfo, *gerrit.Response, error) {
+	if m.ListSSHKeysErr != nil {
+		return nil, nil, m.ListSSHKeysErr
+	}
+
+	mockResponse := &gerrit.Response{
+		Response: &http.Response{
+			StatusCode: http.StatusOK,
+		},
+	}
+
+	return &m.ListSSHKeysResult, mockResponse, nil
 }
 
 func TestSyncUser(t *testing.T) {
@@ -223,6 +240,23 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr: false,
 		},
+		{
+			//  Key Already Exists in Gerrit
+			name: "Key_Already_Exists",
+			mockGerrit: &MockGerritClient{
+				QueryResult:       []gerrit.AccountInfo{{AccountID: 123}},
+				ListSSHKeysResult: []gerrit.SSHKeyInfo{{SSHPublicKey: "ssh-rsa AAAAB3NzaC1yc2E"}},
+				QueryErr:          nil,
+			},
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+			},
+			user: &coderclient.CoderUser{
+				Email: "test@example.com",
+				ID:    "user123",
+			},
+			expectErr: false,
+		},
 	}
 
 	for _, tc := range testCases {
@@ -245,7 +279,7 @@ func TestSyncUser(t *testing.T) {
 			}
 
 			if err != nil && !tc.expectErr {
-				t.Errorf("Did not expect an error but got one: %v", err)
+				t.Errorf("Did not expect an error but got : %v", err)
 			}
 
 			tc.mockGerrit.AssertNumberOfCalls(t, "AddSSHKey", len(tc.expectedIDs))
