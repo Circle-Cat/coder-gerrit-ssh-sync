@@ -18,6 +18,24 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0336792e_44b03990",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2025-03-11T00:18:11Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "7d664820_0f9501c7",
+      "revId": "711e547551dd567ad4658a6c2f38b3e92509fe9a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9dd56dfb_77d5b1f7",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-03-07T08:35:31Z",
       "side": 1,
       "message": "typo Garrit",
+      "revId": "711e547551dd567ad4658a6c2f38b3e92509fe9a",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c52eaeeb_a9e8777f",
+        "filename": "cmd/coder-gerrit-ssh-sync/main_test.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2025-03-11T00:18:11Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "9dd56dfb_77d5b1f7",
       "revId": "711e547551dd567ad4658a6c2f38b3e92509fe9a",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
