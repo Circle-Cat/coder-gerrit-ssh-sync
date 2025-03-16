@@ -39,6 +39,30 @@
       },
       "revId": "70b098210537a32ee7a9650d8000c09c25c078aa",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0748781_96db6349",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2025-03-16T00:19:27Z",
+      "side": 1,
+      "message": "comment fixed. thanks!",
+      "parentUuid": "e416cb7f_ce9f247a",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 20
+      },
+      "revId": "70b098210537a32ee7a9650d8000c09c25c078aa",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
