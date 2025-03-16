@@ -103,6 +103,11 @@ func newGerritClient(ctx context.Context, path string, gerritUsername string, ge
 // combines all errors when adding SSH key to Gerrit accounts.
 func syncUser(ctx context.Context, client *coderclient.CoderClient, gAccountService gerritAccountsService, user *coderclient.CoderUser) error {
 	// Make API call to search gerrit account using email
+	if user.Status == coderclient.UserStatusSuspended {
+		log.Printf("Skipping sync for non-active Coder user: %q", user)
+		return nil
+	}
+
 	log.Printf("Syncing user %q", user)
 	gus, _, err := gAccountService.QueryAccounts(ctx, &gerrit.QueryAccountOptions{
 		QueryOptions: gerrit.QueryOptions{
