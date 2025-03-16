@@ -40,6 +40,7 @@ type CoderUser struct {
 	Email    string `json:"email"`
 	ID       string `json:"id"`
 	Username string `json:"username"`
+	Status   string `json:"status"`
 }
 
 // NewCoderClient returns a pointer coderClient (reference).
@@ -52,7 +53,7 @@ func NewCoderClient(url string, token string) *CoderClient {
 }
 
 func (u *CoderUser) String() string {
-	return fmt.Sprintf("%s (%s, %s)", u.Username, u.ID, u.Email)
+	return fmt.Sprintf("%s (%s, %s, %s)", u.Username, u.ID, u.Email, u.Status)
 }
 
 // Get sends an HTTP GET request to the specified path using the coderClient.
