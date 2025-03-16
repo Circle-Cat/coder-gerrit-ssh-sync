@@ -8,6 +8,14 @@ import (
 	"net/url"
 )
 
+type UserStatus string
+
+const (
+	UserStatusActive    UserStatus = "active"
+	UserStatusDormant   UserStatus = "dormant"
+	UserStatusSuspended UserStatus = "suspended"
+)
+
 // CoderClient is a client for interacting with the Coder API.
 type CoderClient struct {
 	// url is the base URL of Coder API.
@@ -37,9 +45,10 @@ type CoderUserGitSSHKeyResponse struct {
 
 // CoderUser represents the user details retrieved from Coder API.
 type CoderUser struct {
-	Email    string `json:"email"`
-	ID       string `json:"id"`
-	Username string `json:"username"`
+	Email    string     `json:"email"`
+	ID       string     `json:"id"`
+	Username string     `json:"username"`
+	Status   UserStatus `json:"status"`
 }
 
 // NewCoderClient returns a pointer coderClient (reference).
@@ -52,7 +61,7 @@ func NewCoderClient(url string, token string) *CoderClient {
 }
 
 func (u *CoderUser) String() string {
-	return fmt.Sprintf("%s (%s, %s)", u.Username, u.ID, u.Email)
+	return fmt.Sprintf("%s (%s, %s, %s)", u.Username, u.ID, u.Email, u.Status)
 }
 
 // Get sends an HTTP GET request to the specified path using the coderClient.

@@ -257,6 +257,46 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr: false,
 		},
+		{
+			// Non-active Coder user: Suspended
+			name: "Suspended_Coder_User",
+			mockGerrit: &MockGerritClient{
+				QueryResult: []gerrit.AccountInfo{{AccountID: 123}},
+				QueryErr:    nil,
+			},
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+			},
+			user: &coderclient.CoderUser{
+				Email:    "suspendedUser@example.com",
+				ID:       "user123",
+				Username: "suspendedUser",
+				Status:   coderclient.UserStatusSuspended,
+			},
+			expectErr:   false,
+			expectedIDs: []string{},
+			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+		},
+		{
+			// Non-active Coder user: Dormant
+			name: "Dormant_Coder_User",
+			mockGerrit: &MockGerritClient{
+				QueryResult: []gerrit.AccountInfo{{AccountID: 123}},
+				QueryErr:    nil,
+			},
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+			},
+			user: &coderclient.CoderUser{
+				Email:    "dormantUser@example.com",
+				ID:       "user123",
+				Username: "dormantUser",
+				Status:   coderclient.UserStatusDormant,
+			},
+			expectErr:   false,
+			expectedIDs: []string{},
+			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+		},
 	}
 
 	for _, tc := range testCases {
