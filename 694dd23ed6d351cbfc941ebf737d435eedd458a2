@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cf993ca_cc663442",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-03-18T06:51:34Z",
+      "side": 1,
+      "message": "It looks like the values are active/dormant/suspend instead of inactive.\n\nhttps://github.com/coder/coder/blob/3ae55bbbf4818c8c75910cff106c7a045308e6aa/codersdk/users.go#L20\n\nAlso consider making then constants in pkg/coderclient/client.go similar to the linked code.",
+      "range": {
+        "startLine": 106,
+        "startChar": 20,
+        "endLine": 106,
+        "endChar": 28
+      },
+      "revId": "694dd23ed6d351cbfc941ebf737d435eedd458a2",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
