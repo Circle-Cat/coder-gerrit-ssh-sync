@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1305946a_e9f00932",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-03-18T19:20:33Z",
+      "side": 1,
+      "message": "https://www.youtube.com/watch?v\u003d8eCJfJ6lraQ",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "694dd23ed6d351cbfc941ebf737d435eedd458a2",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4cf993ca_cc663442",
         "filename": "cmd/coder-gerrit-ssh-sync/main.go",
         "patchSetId": 1
