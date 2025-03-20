@@ -39,6 +39,30 @@
       },
       "revId": "b68c641d86ee9c3458c02856de3ab48903f17e30",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44ff9127_89096391",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2025-03-20T01:51:08Z",
+      "side": 1,
+      "message": "Name Convention updated.",
+      "parentUuid": "894ce405_b0d31549",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 9
+      },
+      "revId": "b68c641d86ee9c3458c02856de3ab48903f17e30",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
