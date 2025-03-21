@@ -51,6 +51,24 @@
       "parentUuid": "3a2cdbd7_d1cc7cf6",
       "revId": "95a7f92f49ff883384bb3320803386bbc435ca70",
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c996815d_cb700622",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2025-03-21T01:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "601527d1_3f9b3b05",
+      "revId": "95a7f92f49ff883384bb3320803386bbc435ca70",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     }
   ]
 }
