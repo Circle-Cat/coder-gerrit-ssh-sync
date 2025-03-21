@@ -24,6 +24,30 @@
       "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42cb7390_854bee85",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000061
+      },
+      "writtenOn": "2025-03-21T04:15:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1305946a_e9f00932",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "694dd23ed6d351cbfc941ebf737d435eedd458a2",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4cf993ca_cc663442",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "If you want to verify, the user \"jlia\" on the live coder site should be a dormant user.",
       "parentUuid": "ae354b66_d0cddde8",
+      "range": {
+        "startLine": 106,
+        "startChar": 20,
+        "endLine": 106,
+        "endChar": 28
+      },
+      "revId": "694dd23ed6d351cbfc941ebf737d435eedd458a2",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e9a3e48_d0cae228",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000061
+      },
+      "writtenOn": "2025-03-21T04:15:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c416834_a1d515b7",
       "range": {
         "startLine": 106,
         "startChar": 20,
