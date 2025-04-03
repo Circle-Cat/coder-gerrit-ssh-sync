@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34e7d157_7c9d71ee",
+        "filename": "cmd/coder-gerrit-ssh-sync/main.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2025-04-03T01:58:33Z",
+      "side": 1,
+      "message": "I think we meant to stop syncing both dormant and suspended.",
+      "range": {
+        "startLine": 106,
+        "startChar": 31,
+        "endLine": 106,
+        "endChar": 50
+      },
+      "revId": "1c068ab78c281c52d7a7a04ccdf64c832d5d6a36",
+      "serverId": "064ee66a-ae46-499d-ad6e-e0a180e6bf4d"
+    }
+  ]
+}
