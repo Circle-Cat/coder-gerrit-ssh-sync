@@ -23,7 +23,11 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"slices"
 	"strconv"
+	"strings"
+
+	"golang.org/x/crypto/ssh"
 
 	"github.com/andygrunwald/go-gerrit"
 	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/coderclient"
@@ -157,9 +161,23 @@ UserLoop:
 			continue
 		}
 
+		normalizedKey := strings.TrimSpace(key.PublicKey)
+		parsedNewKey, _, _, _, err := ssh.ParseAuthorizedKey([]byte(normalizedKey))
+		if err != nil {
+			errs = append(errs, fmt.Errorf("failed to parse SSH key for user %q: %w", user, err))
+			continue
+		}
+
 		for _, existingKey := range *existingKeys {
-			if existingKey.SSHPublicKey == key.PublicKey {
-				log.Printf("SSH key already exists for Gerrit user %d, skipping...", gu.AccountID)
+			trimmedExisting := strings.TrimSpace(existingKey.SSHPublicKey)
+			parsedExistingKey, _, _, _, err := ssh.ParseAuthorizedKey([]byte(trimmedExisting))
+			if err != nil {
+				log.Printf("Failed to parse existing SSH key for user %d: %v", gu.AccountID, err)
+				continue
+			}
+
+			if slices.Equal(parsedNewKey.Marshal(), parsedExistingKey.Marshal()) {
+				log.Printf("SSH key already exists (matched by key content) for Gerrit user %d, skipping...", gu.AccountID)
 				continue UserLoop
 			}
 		}

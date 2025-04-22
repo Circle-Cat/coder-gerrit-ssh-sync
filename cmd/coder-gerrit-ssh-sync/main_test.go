@@ -2,11 +2,16 @@ package main
 
 import (
 	"context"
+	"crypto/rand"
+	"crypto/rsa"
 	"errors"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
+
+	"golang.org/x/crypto/ssh"
 
 	"github.com/andygrunwald/go-gerrit"
 	"github.com/jingyuanliang/coder-gerrit-ssh-sync/pkg/coderclient"
@@ -60,8 +65,23 @@ func (m *MockGerritClient) ListSSHKeys(ctx context.Context, accountID string) (*
 	return &m.ListSSHKeysResult, mockResponse, nil
 }
 
+func generateTestSSHKey(t *testing.T) string {
+	privateKey, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		t.Fatalf("failed to generate private key: %v", err)
+	}
+
+	pub, err := ssh.NewPublicKey(&privateKey.PublicKey)
+	if err != nil {
+		t.Fatalf("failed to generate public key: %v", err)
+	}
+
+	return strings.TrimSpace(string(ssh.MarshalAuthorizedKey(pub)))
+}
+
 func TestSyncUser(t *testing.T) {
 	ctx := context.Background()
+	testNormalizedSSHKey := generateTestSSHKey(t)
 
 	testCases := []struct {
 		name         string
@@ -82,7 +102,7 @@ func TestSyncUser(t *testing.T) {
 				AddSSHKeyErr: nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -91,7 +111,7 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr:   false,
 			expectedIDs: []string{"123"},
-			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+			expectedKey: testNormalizedSSHKey,
 		},
 		{
 			// QueryAccount failed to retrieve gerrit account.
@@ -101,7 +121,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    errors.New("QuerryAccount failed"),
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -118,7 +138,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -154,7 +174,7 @@ func TestSyncUser(t *testing.T) {
 				AddSSHKeyErr: fmt.Errorf("failed to add SSH key"),
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -163,7 +183,7 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr:   true,
 			expectedIDs: []string{"123"},
-			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+			expectedKey: testNormalizedSSHKey,
 		},
 		{
 			// Multiple AddSSHKey calls.
@@ -178,7 +198,7 @@ func TestSyncUser(t *testing.T) {
 				AddSSHKeyErr: nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -187,7 +207,7 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr:   false,
 			expectedIDs: []string{"123", "456"},
-			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+			expectedKey: testNormalizedSSHKey,
 		},
 		{
 			//  Gerrit accountId is invalid.
@@ -197,7 +217,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -231,7 +251,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "test@example.com",
@@ -245,11 +265,11 @@ func TestSyncUser(t *testing.T) {
 			name: "Key_Already_Exists",
 			mockGerrit: &MockGerritClient{
 				QueryResult:       []gerrit.AccountInfo{{AccountID: 123}},
-				ListSSHKeysResult: []gerrit.SSHKeyInfo{{SSHPublicKey: "ssh-rsa AAAAB3NzaC1yc2E"}},
+				ListSSHKeysResult: []gerrit.SSHKeyInfo{{SSHPublicKey: testNormalizedSSHKey}},
 				QueryErr:          nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email: "test@example.com",
@@ -265,7 +285,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "suspendedUser@example.com",
@@ -275,7 +295,7 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr:   false,
 			expectedIDs: []string{},
-			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+			expectedKey: testNormalizedSSHKey,
 		},
 		{
 			// Non-active Coder user: Dormant
@@ -285,7 +305,7 @@ func TestSyncUser(t *testing.T) {
 				QueryErr:    nil,
 			},
 			mockResponse: func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"public_key": "ssh-rsa AAAAB3NzaC1yc2E"}`)
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
 			},
 			user: &coderclient.CoderUser{
 				Email:    "dormantUser@example.com",
@@ -295,7 +315,30 @@ func TestSyncUser(t *testing.T) {
 			},
 			expectErr:   false,
 			expectedIDs: []string{},
-			expectedKey: "ssh-rsa AAAAB3NzaC1yc2E",
+			expectedKey: testNormalizedSSHKey,
+		},
+		{
+			// Key Already Exists including Comments
+			name: "Key_Equality_Ignores_Comment",
+			mockGerrit: &MockGerritClient{
+				Mock:        mock.Mock{},
+				QueryResult: []gerrit.AccountInfo{{AccountID: 123}},
+				ListSSHKeysResult: []gerrit.SSHKeyInfo{
+					{SSHPublicKey: testNormalizedSSHKey + " some-comment"},
+				},
+				QueryErr: nil,
+			},
+			mockResponse: func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintf(w, `{"public_key": "%s"}`, testNormalizedSSHKey)
+			},
+			user: &coderclient.CoderUser{
+				Email:    "comment-test@example.com",
+				ID:       "user-comment-test",
+				Username: "comment-tester",
+			},
+			expectErr:   false,
+			expectedIDs: []string{},
+			expectedKey: testNormalizedSSHKey,
 		},
 	}
 
